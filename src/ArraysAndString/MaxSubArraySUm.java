@@ -1,4 +1,4 @@
-package Arrays;
+package ArraysAndString;
 
 public class MaxSubArraySUm {
     public static void main(String[] args) {

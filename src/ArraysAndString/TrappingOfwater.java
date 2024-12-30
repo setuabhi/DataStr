@@ -1,6 +1,4 @@
-package Arrays;
-
-import java.util.Arrays;
+package ArraysAndString;
 
 public class TrappingOfwater {
     public static void main(String[] args) {

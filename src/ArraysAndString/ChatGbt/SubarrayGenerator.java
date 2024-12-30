@@ -1,20 +1,9 @@
-package Arrays;
+package ArraysAndString.ChatGbt;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SubarrayGenerator {
-    public static void printAllSubarrays(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i; j < arr.length; j++) {
-                for (int k = i; k <= j; k++) {
-                    System.out.print(arr[k] + " ");
-                }
-                System.out.println();
-            }
-        }
-    }
-
     public static void printAllSubarraysN2(int[] array) {
         List<List<Integer>> subArray= new ArrayList<>();
         for (int start = 0; start < array.length; start++) {
@@ -32,7 +21,6 @@ public class SubarrayGenerator {
 
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4};
-        printAllSubarrays(array);
         printAllSubarraysN2(array);
     }
 }

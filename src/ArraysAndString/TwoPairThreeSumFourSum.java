@@ -1,4 +1,4 @@
-package Arrays;
+package ArraysAndString;
 
 import java.util.*;
 

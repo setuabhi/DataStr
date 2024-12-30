@@ -1,4 +1,4 @@
-package Arrays;
+package ArraysAndString;
 
 /**
  * nLogn approcah will be Arrays.sort then find
