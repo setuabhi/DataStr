@@ -1,4 +1,4 @@
-package ArraysAndString.ChatGbt;
+package ArraysAndString;
 
 public class KradanAlgorithm {
     public static int maxSubarraySum(int[] nums) {

@@ -1,4 +1,4 @@
-package Commons;
+package ArraysAndString;
 
 
 public class Anagram {

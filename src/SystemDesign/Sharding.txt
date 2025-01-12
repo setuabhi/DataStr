@@ -1,0 +1,8 @@
+Partitioning vs Sharding
+While both partitioning and sharding involve dividing data, they differ in scope and implementation:
+
+Feature	        Partitioning	                                          Sharding
+Scope	        Divides data within a single database or server.	      Distributes data across multiple databases/servers.
+Goal	        Improve query performance and manageability locally.      Achieve scalability by handling large-scale traffic and data.
+Control	        Handled at the database level (internal).	              Requires application-level logic for routing queries to the correct shard(Server)
+Infrastructure	Operates within a single physical database or instance.   Involves multiple databases on separate servers.
