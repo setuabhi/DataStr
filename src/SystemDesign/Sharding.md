@@ -30,7 +30,8 @@
 
     Concept:
        In vertical sharding, the columns of a table are divided across multiple shards. Each shard contains a subset of columns for the same rows and will have one common joining column
-       How It Works:
+
+    How It Works:
        Data is split by functionality or access patterns. For example:
        Shard 1 contains user profile information (user_id, name, email).
        Shard 2 contains user activity data (user_id, login_count, last_login).
@@ -49,12 +50,15 @@
 
     Concept:
        Directory-based sharding uses a lookup table (directory) to determine where a particular piece of data is stored in shard (Server)
-       How It Works:
+
+    How It Works:
        The application or database queries the directory to find the shard containing the data.
        The directory maps keys (e.g., user IDs or order IDs) to specific shards. i.e. Directory will tell where user_id=10 will be found, db1 or db2 ...
+
     Advantages:
        Flexible and allows arbitrary sharding logic.
        Can easily handle changes, like adding or removing shards, without redistributing all data because distributing logic we can define in directory only
+
     Challenges:
        The directory can become a single point of failure or a performance bottleneck.
        Increased complexity in maintaining and updating the directory.
