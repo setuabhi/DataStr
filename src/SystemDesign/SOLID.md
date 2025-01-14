@@ -106,7 +106,7 @@
 
 **Liskov Substitution Principle (LSP)**
 
-    Derived classes should be substitutable for their base classes, i.e. each methods in parent class should be making sense for their Child class
+    Derived classes should be substitutable for their base classes, i.e. each methods in parent class should be substitutable by their Child class
 
 **Java Code**
 
@@ -289,4 +289,9 @@ Problems:
     }
     
 
+**Summary**
+
+    Only for S the solution is create new classes 
+    for O, I and D solution is use interface instead of class
+    and for L = split Interfaces to least generic
 
