@@ -14,13 +14,6 @@
     1D index of (a,b) in 4*5 2D array = a*5 + b
     2D index of x in 4*5 array = x/5, x%5 , In both claculation column only plays role
 
-    Comparable Comparator:
-        Example: Arrays.sort(2DArray, Comparator.comparing(a->a[0])); for comparable you need to extend Comparable<Employee> the override compareto
-        Feature	            Comparable  	Comparator
-        Defines	            Natural ordering	Custom ordering
-        Sorting criteria        Single	        Multiple
-        Implementation	    In  class   	Separately
-        Method	            compareTo() 	compare()
 
     There are 127 charaters, Ascii lies between 0 to 255, 0=null, 32=space , 33-126 keyboard charaters and 127=del
         int ascii= 'c'
