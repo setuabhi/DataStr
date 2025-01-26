@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ThreadSafeLazy {
-    private static ThreadSafeLazy instance;
-    private Map<String, String> cacheData;
+    private static volatile ThreadSafeLazy instance; //Volatile so that if instance created by one thread it should be instantly available to all other threads
+    private final Map<String, String> cacheData;
 
     // Private constructor
     private ThreadSafeLazy() {

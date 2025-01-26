@@ -24,9 +24,9 @@ public class ExecuterService {
         ExecutorService executor = Executors.newFixedThreadPool(3);
 
         // Define tasks as Callable objects
-        Callable<List<Integer>> task1 = ExecuterService::method1;
-        Callable<List<Integer>> task2 = ExecuterService::method2;
-        Callable<List<Integer>> task3 = ExecuterService::method3;
+        Callable<List<Integer>> task1 = () -> ExecuterService.method1();
+        Callable<List<Integer>> task2 = () -> ExecuterService.method2();
+        Callable<List<Integer>> task3 = () -> ExecuterService.method3();
 
         try {
             // Submit tasks and get Future objects
