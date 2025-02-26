@@ -6,5 +6,6 @@ public class MainClass {
         StaticExample.Abhinav.print2();
         StaticExample.Abhinav s2= new StaticExample.Abhinav();
         s2.print();
+        System.out.println(3^7);
     }
 }

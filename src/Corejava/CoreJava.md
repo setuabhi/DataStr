@@ -83,7 +83,7 @@
     🔴 Local variables: Inside a method, constructor, or block  ; Instance variables: Inside a class, outside any method
 
     🔴 Stack Memory – Stores local variables and method calls, Each method gets a new stack frame when it is called , Cleaned When method ends
-       Heap Memory – Stores objects and instance variables, cleaned By Garbage Collector
+       Heap Memory –  Stores objects and instance variables, cleaned By Garbage Collector
        String Constant Pool (SCP) – A special part of the heap where string literals are stored. cleaned By Garbage Collector
      
     🔴  class Person {
@@ -111,3 +111,64 @@
     | "Java" (one object) |
 
 11.**String questions:**
+
+    🔴  String (Immutable)
+            A String in Java is immutable, meaning once it is created, it cannot be changed.
+            Every modification creates a new object in memory.
+            Stored in the String Constant Pool (SCP) for optimization.
+        Code:
+            String s1 = "Hello";           // Stored in SCP
+            String s2 = s1 + "World";     // New object created in heap, The + operator triggers StringBuilder concatenation at runtime, that's why heap came in picture
+            String s3 = (s1 + "Abhi").intern();
+
+            SCP:
+            | "Hello"        |
+            | " World"       |
+            | " Hello Abhi" |
+            
+            Heap:
+            | "Hello World" (created at runtime) |
+    
+            Stack:
+            | s1 ->Pointing to SCP |
+            | s2 ->Pointing to Heap|
+            | s3 ->Pointing to SCP |
+
+    🔴 StringBuffer (Mutable & Thread-Safe)
+
+    🔴  StringBuilder (Mutable & Faster beacause it's not tread safe i.e. it does not have synchronization overhead.)
+
+    🔴  String s1 = new String("abhi"); //Below things will happen
+            SCP:
+            | "abhi" |  <-- Created if not already present
+            
+            Heap:
+            | "abhi" (New object from `new String()`) |
+
+            Stack:
+            | s1 ->Pointing to Heap |
+
+    🔴  String s1 = new String("abhi");  // Heap object
+        String s2 = "abhi";              // SCP object
+        String s3 = "abhi";             // SCP object
+        String s4 = new String("abhi").intern();         // s4 points to SCP object
+    
+        System.out.println(s1 == s2); // false (heap vs SCP)
+        System.out.println(s2 == s3); // true (both in SCP)
+        System.out.println(s2 == s4); // true (both in SCP)
+        System.out.println(s1 == s4); // false (heap vs SCP)
+
+12.**Bitwise operator**
+
+    🔴  Divide the number by 2 and write down the quotient and remainder.
+        Divide the quotient by 2 and write down the quotient and remainder.
+        Repeat the process until the quotient becomes 0.
+        Read the remainders from bottom to top to get the binary representation
+    🔴  AND operator: "&" returns a value with 1s only where both operands have 1s,and 0s elsewhere.
+        OR operator: "|" returns a value with 1s where either or both operands have 1s, and 0s elsewhere.
+        XOR operator: "^" returns a value with 1s only where the operands have different values, and 0s if same.
+        3 | 5 will return 7, we need to convert 3 and 5 to binary
+        3^3 will return 0, beacuse all binary will be same for both numbers
+        3^0 will return 3, think 
+        3^7 will return 4, we need to convert 3 and 4 to binary
+        
