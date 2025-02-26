@@ -6,8 +6,7 @@
    We can create threads directly using new keyword or with the help of executer service 
 3. Extending the Thread class limits the subclass because it can't extend any other class,
    whereas Runnable is a functional interface and can be used with the Thread class or any other class.
-4. 
-5. Thread.State enum provides constants for each of these states, Thread.getState() method can be used to determine the current state of a thread.
+4. Thread.State enum provides constants for each of these states, Thread.getState() method can be used to determine the current state of a thread.
    In Java, a thread can exist in one of the following states:
 
       
