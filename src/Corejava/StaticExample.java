@@ -16,4 +16,12 @@ public class StaticExample {
             System.out.println("Hi from static inner class static method");
         }
     }
+
+    public static void main(String[] args) {
+        StaticExample s =new StaticExample();
+        StaticExample.Abhinav.print2();
+        StaticExample.Abhinav s2= new StaticExample.Abhinav();
+        s2.print();
+        System.out.println(3^7);
+    }
 }

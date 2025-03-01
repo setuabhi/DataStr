@@ -28,7 +28,18 @@
 
     🔴 Can't override static method, can't extend static inner class
 
-    🔴 create object of inner static class(Abhinav) as: StaticExample.Abhinav s2= new StaticExample.Abhinav();
+    🔴 create object of inner static class(Abhinav) as:
+            StaticExample.Abhinav s2= new StaticExample.Abhinav();
+            See we can create object of inner non static class
+    🔴 Access non static variable from static method:
+        class Example {
+            int instanceVariable = 10; // Non-static variable
+        
+            static void staticMethod() {
+                Example obj = new Example(); // Create an instance
+                System.out.println("Instance Variable: " + obj.instanceVariable);
+            }
+        }
 
 6.**Final Keyword questions:**
 
@@ -171,4 +182,3 @@
         3^3 will return 0, beacuse all binary will be same for both numbers
         3^0 will return 3, think 
         3^7 will return 4, we need to convert 3 and 4 to binary
-        
