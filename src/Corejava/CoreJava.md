@@ -77,17 +77,17 @@
 
     🔴  User user = new User("john_doe", "secure123");
         // Serialize object 
-        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("user.ser")); //user.ser is a file that stores the serialized object in binary format.
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("user.txt")); //user.txt is a file that stores the serialized object in binary format.
         oos.writeObject(user);
         oos.close();
         
         // Deserialize object
-        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("user.ser"));
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("user.txt"));
         User deserializedUser = (User) ois.readObject();
         ois.close();
         
         // Output
-        System.out.println("Deserialized User: " + deserializedUser.password); //null
+        System.out.println("Deserialized User: " + deserializedUser.password); // password null
 
 10.**Memory allocation:**
 
@@ -105,13 +105,14 @@
 
         public static void main(String[] args) {
         String s="Java";
-        Person p1 = new Person(); // Object stored in heap, reference in stack
+        Person p1 = new Person(); 
         p1.name = "Alice";
             }
         }
 
     Stack:
     | main() Frame   |
+    | s              |
     | p1 (reference) |
     -----------------
     Heap:
@@ -145,7 +146,7 @@
             | s2 ->Pointing to Heap|
             | s3 ->Pointing to SCP |
 
-    🔴 StringBuffer (Mutable & Thread-Safe)
+    🔴  StringBuffer (Mutable & Thread-Safe)
 
     🔴  StringBuilder (Mutable & Faster beacause it's not tread safe i.e. it does not have synchronization overhead.)
 

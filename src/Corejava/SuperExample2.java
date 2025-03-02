@@ -8,6 +8,7 @@ public class SuperExample2 {
 
 class Child2 extends SuperExample2 {
     Child2() {  // Compiler tries to insert super(); but Parent() doesn't exist, compile error, if you write super("Hello") as the first line it will work
+        super("Hello");
         System.out.println("Child constructor");
     }
 }
