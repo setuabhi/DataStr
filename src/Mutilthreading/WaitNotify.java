@@ -1,69 +1,42 @@
 package Mutilthreading;
 
 public class WaitNotify {
-    private String message;
-    private boolean hasMessage = false;
+    public void waitForTeacher() {
+    synchronized (this) {
+        try {
+            System.out.println("Student is waiting for the teacher...");
+            wait();  // Student waits here
+            System.out.println("Student got the signal and starts studying!");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
 
-    // Synchronized method to send a message
-    public synchronized void send(String msg) {
-        while (hasMessage) {
+    public void giveSignal() {
+        synchronized (this) {
             try {
-                wait(); // Wait if a message is already available
+                Thread.sleep(5000); // Simulate delay before giving signal
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            System.out.println("Teacher gives the signal!");
+            notify();  // Teacher gives signal to wake up student
         }
-        this.message = msg;
-        System.out.println("Sending message: " + msg);
-        hasMessage = true;
-        notify(); // Notify waiting threads
     }
+}
 
-    // Synchronized method to receive a message
-    public synchronized String receive() {
-        while (!hasMessage) {
-            try {
-                wait(); // Wait until a message is sent
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        System.out.println("Receiving message: " + message);
-        hasMessage = false;
-        notify(); // Notify the producer that the message has been consumed
-        return message;
+class WaitNotifySimple {
+    public static void main(String[] args) {
+        WaitNotify waitNotify = new WaitNotify();
+
+        // Student Thread (Waits for signal)
+        Thread student = new Thread(waitNotify::waitForTeacher);
+
+        // Teacher Thread (Gives signal after some time)
+        Thread teacher = new Thread(waitNotify::giveSignal);
+
+        student.start();
+        teacher.start();
     }
-
-public static void main(String[] args) {
-            WaitNotify service = new WaitNotify();
-
-            // Producer thread: Sends messages
-            Thread producer = new Thread(() -> {
-                String[] messages = {"Hello", "How are you?", "Goodbye"};
-                for (String msg : messages) {
-                    service.send(msg);
-                    try {
-                        Thread.sleep(1000); // Simulate delay
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-            // Consumer thread: Receives messages
-            Thread consumer = new Thread(() -> {
-                for (int i = 0; i < 3; i++) {
-                    service.receive();
-                    try {
-                        Thread.sleep(1000); // Simulate delay
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-            // Start both threads
-            producer.start();
-            consumer.start();
-        }
 }

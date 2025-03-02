@@ -59,10 +59,10 @@
          3. Memory location (variable being updated)
 
       The CAS operation works like this:
-      It reads the current value from memory.
-      It compares the read value with the expected value.
-      If the values match, it updates the variable with the new value atomically.
-      If the values don’t match, the update fails, and the operation is retried.
+         It reads the current value from memory.
+         It compares the read value with the expected value.
+         If the values match, it updates the variable with the new value atomically.
+         If the values don’t match, the update fails, and the operation is retried.
 
       CAS in Action (Example)
       Imagine a count variable initially set to 5:
