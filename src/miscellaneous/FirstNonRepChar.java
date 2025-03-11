@@ -1,9 +1,7 @@
-package Commons;
+package miscellaneous;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
-import java.util.Map;
 
 public class FirstNonRepChar {
     public static void main(String[] args) {

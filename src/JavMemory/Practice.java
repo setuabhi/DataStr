@@ -1,9 +1,8 @@
 package JavMemory;
 
-import Commons.Employee;
+import miscellaneous.Employee;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class Practice {

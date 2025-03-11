@@ -1,4 +1,4 @@
-package Commons;
+package miscellaneous;
 
 import java.util.HashSet;
 
