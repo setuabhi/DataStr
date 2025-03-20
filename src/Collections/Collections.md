@@ -1,6 +1,6 @@
 Hashset.add returns true if new element being added else return false 
 
-Hasmap.put returns null if new element being added else return value for that key
+Hashmap.put returns null if new element being added else return value for that key
 
 Both Hashmap and hashset works on O(1) for their add/put and get Methods
 
@@ -32,3 +32,6 @@ Dequeue:
 
     It has all functions of stack and queue like push pop peek offer poll except search
     
+Time complexity of Queue Stack and QUEUE are O(1) 
+
+LinkedList: 

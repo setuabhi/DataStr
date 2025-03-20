@@ -183,3 +183,52 @@
         3^3 will return 0, beacuse all binary will be same for both numbers
         3^0 will return 3, think 
         3^7 will return 4, we need to convert 3 and 4 to binary
+
+13.**Interface**
+
+    🔴 Default methods strike a balance between interface flexibility and backward compatibility
+
+14.**Exception Handeling**
+
+    🔴  Checked Exceptions
+        These are exceptions that are checked at compile-time.
+        The compiler mandates handling them using try-catch or declaring them with throws.
+        Typically used for recoverable situations (e.g., file not found, network issues).
+        Examples:
+        
+        IOException
+        SQLException
+        FileNotFoundException
+        ClassNotFoundException
+
+    🔴  UnChecked Exceptions
+        These are exceptions that occur at runtime and are not checked at compile-time.
+        They usually result from programming errors like null pointer access, array index out of bounds, etc.
+        Extends RuntimeException.
+        Examples:
+        
+        NullPointerException
+        ArrayIndexOutOfBoundsException
+        ArithmeticException
+        NumberFormatException
+
+    🔴 Correct prder of catch: (Most Specific First i.e. downwards first)
+
+        Throwable
+        ├── Error
+        │   ├── OutOfMemoryError
+        │   ├── StackOverflowError
+        │   ├── VirtualMachineError
+        │
+        └── Exception
+        ├── IOException (Checked)
+        │   ├── FileNotFoundException
+        │   └── EOFException
+        │
+        ├── SQLException (Checked)
+        │
+        ├── RuntimeException (Unchecked)
+        ├── NullPointerException
+        ├── ArithmeticException
+        ├── ArrayIndexOutOfBoundsException
+        └── IllegalArgumentException

@@ -1,4 +1,4 @@
-package miscellaneous;
+package JavMemory;
 
 public class Employee {
     private  String name;

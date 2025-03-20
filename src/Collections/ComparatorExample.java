@@ -1,4 +1,4 @@
-package miscellaneous;
+package Collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,14 +17,19 @@ public class ComparatorExample  {
         this.name = name;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "Student{id=" + id + ", name='" + name + "'}";
     }
-}
 
-class main
-{
     public static void main(String[] args) {
         List<ComparatorExample> students = new ArrayList<>();
         students.add(new ComparatorExample(3, "Alice"));
@@ -33,9 +38,7 @@ class main
         students.add(new ComparatorExample(1, "Adam"));
 
         // Sort using Comparator: first by id, then by name
-        students.sort(Comparator.comparingInt((ComparatorExample s) -> s.id)
-                .thenComparing(s -> s.name)
-        );
+        students.sort(Comparator.comparingInt(ComparatorExample::getId).thenComparing(ComparatorExample::getName));
         System.out.println(students);
 
         int[][] intervals = {{2, 6},
@@ -48,3 +51,5 @@ class main
         System.out.println(Arrays.deepToString(intervals));
     }
 }
+
+
