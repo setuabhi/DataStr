@@ -1,5 +1,7 @@
 package Corejava;
 
+import java.util.List;
+
 //Generic class , T comes after class name
 public class GenericExample <T> {
     private T value;
@@ -12,13 +14,27 @@ public class GenericExample <T> {
         return value;
     }
 
-    // Generic method, T comes before return type
-    public static <T> void printArray(T[] array) {
-        for (T element : array) {
-            System.out.print(element + " ");
+    // Generic static method, T comes before return type
+    public static <T> void printList(List<T> list) {
+        for (T item : list) {  // ✅ You know T, so you can safely access it
+            System.out.println(item);
         }
-        System.out.println();
     }
+
+    // Wildcard method
+    public static void printListWildcard(List<?> list) {  // `?` means unknown type
+        for (Object item : list) {  // ✅ We only assume it's an Object
+            System.out.println(item);
+        }
+    }
+
+    public static void printListWildcardFixed(List<? extends Number> list) {  // `?` means unknown type
+        for (Number item : list) {  // ✅ We know it's a Number
+            System.out.println(item);
+        }
+    }
+
+
 
     public static void main(String[] args) {
         GenericExample<String> stringBox = new GenericExample<>();
@@ -32,8 +48,6 @@ public class GenericExample <T> {
         String[] strArray = {"Apple", "Banana", "Cherry"};
         Integer[] intArray = {1, 2, 3};
 
-        printArray(strArray); // Output: Apple Banana Cherry
-        printArray(intArray); // Output: 1 2 3
     }
 }
 

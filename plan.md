@@ -131,21 +131,19 @@ Sliding Window
     Easy:
     Maximum Average Subarray I
     Longest Substring Without Repeating Characters
-    Permutation in String
-    Minimum Window Substring
-    Sliding Window Maximum
+    Max subarray length < K
+    Stock buy sell
     
     Medium:
     Longest Repeating Character Replacement
-    Subarrays with K Different Integers
-    Longest Substring with At
+    Subarrays with K Different Integers-*
 
 Two Pointers
 
     Easy:
     Remove Duplicates from Sorted Array
     Valid Palindrome
-    Two Sum II - Input Array Is Sorted
+    Two Sum - Input Array Is Sorted
     Reverse String
     Move Zeroes
     
