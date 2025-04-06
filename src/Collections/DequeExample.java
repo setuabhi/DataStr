@@ -2,19 +2,18 @@ package Collections;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
 
 public class DequeExample {
     public static void main(String[] args) {
-        Deque<String> deque = new ArrayDeque<>();
+        Deque<String> deque = new ArrayDeque<>(); // or deque = new LinkedList<>();
 
         // Adding elements (both ends)
         deque.addFirst("Front");  // Adds to front
         deque.addLast("Back");    // Adds to back
         deque.offerFirst("Start"); // Adds to front without exception
         deque.offerLast("End");   // Adds to back without exception
-
         System.out.println("Deque: " + deque);
-
         // Accessing elements
         System.out.println("First element (peekFirst): " + deque.peekFirst()); // Start
         System.out.println("Last element (peekLast): " + deque.peekLast());    // End

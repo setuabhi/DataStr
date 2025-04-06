@@ -232,3 +232,15 @@
         ├── ArithmeticException
         ├── ArrayIndexOutOfBoundsException
         └── IllegalArgumentException
+
+15.**Immutable class**
+
+    Should be final
+    fields private and final
+    initialize fields by constructor
+    no setter
+
+16.**Record Class in java 17**
+
+    In Java, when you define a record, the compiler automatically provides implementations for the equals(),
+    hashCode(), and toString() methods based on all the fields (components) of the record. see record Emplyee

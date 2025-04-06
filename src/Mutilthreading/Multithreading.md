@@ -117,3 +117,7 @@
         ✅ Multiple threads can access a volatile variable at the same time.
         ❌ Concurrent updates on volatile variables are NOT atomic, leading to race conditions.
         ✅ Use AtomicInteger or synchronized if atomicity is required.
+
+9.**See virtual Thread example in ExecuterService and MethodsToCreateThread**
+
+10.**Use of join()**

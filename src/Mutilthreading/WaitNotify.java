@@ -1,42 +1,71 @@
 package Mutilthreading;
 
+/**
+ * wait() and notify() gives IllegalMonitorStateException without synchorinized block
+ */
+
 public class WaitNotify {
-    public void waitForTeacher() {
-    synchronized (this) {
-        try {
-            System.out.println("Student is waiting for the teacher...");
-            wait();  // Student waits here
-            System.out.println("Student got the signal and starts studying!");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-}
+    volatile int x = 0;
+    int max;
 
-    public void giveSignal() {
-        synchronized (this) {
-            try {
-                Thread.sleep(5000); // Simulate delay before giving signal
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+    public WaitNotify(int max) {
+        this.max = max;
+    }
+
+    void printEven() throws InterruptedException {
+        while (x<=max) {
+            synchronized (this) {
+                if (x % 2 != 0) {
+                    System.out.println("Waiting for Odd Thread Notify");
+                    wait(); //Even thread will not move to next line until gets notify call
+                } else {
+                    System.out.println("Thead: " + Thread.currentThread().getName() + " " + x++);
+                    Thread.sleep(3000);
+                    System.out.println("Notified Odd Thread");
+                    notifyAll();
+                }
+
             }
-            System.out.println("Teacher gives the signal!");
-            notify();  // Teacher gives signal to wake up student
         }
     }
-}
 
-class WaitNotifySimple {
+    void printOdd() throws InterruptedException {
+        while (x<=max) {
+            synchronized (this) {
+                if (x % 2 == 0) {
+                    System.out.println("Waiting for Even Thread Notify");
+                    wait();
+                } else {
+                    System.out.println("Thead: " + Thread.currentThread().getName() + " " + x++);
+                    Thread.sleep(5000);
+                    System.out.println("Notified Even Thread Thread");
+                    notify();
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        WaitNotify waitNotify = new WaitNotify();
+        WaitNotify waitNotify = new WaitNotify(10);
+        Thread t1 = new Thread(() -> {
+                try {
+                    waitNotify.printEven();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+        });
 
-        // Student Thread (Waits for signal)
-        Thread student = new Thread(waitNotify::waitForTeacher);
+        Thread t2 = new Thread(() -> {
+                try {
+                    waitNotify.printOdd();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+        });
+        t1.setName("Even Thread");
+        t1.start();
+        t2.setName("Odd Thread");
+        t2.start();
 
-        // Teacher Thread (Gives signal after some time)
-        Thread teacher = new Thread(waitNotify::giveSignal);
-
-        student.start();
-        teacher.start();
     }
 }

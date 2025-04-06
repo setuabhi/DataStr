@@ -33,7 +33,7 @@ public class SynchonizedExample {
     }
     private final Object lock = new Object();
     public void method4()  {
-        synchronized (lock) {  // Lock a specific object
+        synchronized (lock) {  // Lock current object method4 only
             System.out.println("method4 works!");
         }
     }
