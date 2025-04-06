@@ -4,11 +4,11 @@ package Mutilthreading;
  * wait() and notify() gives IllegalMonitorStateException without synchorinized block
  */
 
-public class WaitNotify {
+public class WaitNotifyPrintOddEven {
     volatile int x = 0;
     int max;
 
-    public WaitNotify(int max) {
+    public WaitNotifyPrintOddEven(int max) {
         this.max = max;
     }
 
@@ -46,7 +46,7 @@ public class WaitNotify {
     }
 
     public static void main(String[] args) {
-        WaitNotify waitNotify = new WaitNotify(10);
+        WaitNotifyPrintOddEven waitNotify = new WaitNotifyPrintOddEven(10);
         Thread t1 = new Thread(() -> {
                 try {
                     waitNotify.printEven();
