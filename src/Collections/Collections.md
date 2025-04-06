@@ -74,7 +74,8 @@ Stack:
 Dequeue: 
 
     It has all functions of stack and queue like push pop peek offer poll except search
-    Useful one: offerFirst / offerLast / peekFirst / peekLast / pollFirst / pollLast / size
+    Useful one: offer / peekFirst / peekLast / pollFirst / pollLast / size
+                first and last means inserted first or inserted last
     
 Time complexity of Queue Stack and QUEUE are O(1) 
 

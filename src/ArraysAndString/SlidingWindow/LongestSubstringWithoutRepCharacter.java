@@ -1,4 +1,4 @@
-package ArraysAndString;
+package ArraysAndString.SlidingWindow;
 
 import java.util.HashSet;
 import java.util.Set;
