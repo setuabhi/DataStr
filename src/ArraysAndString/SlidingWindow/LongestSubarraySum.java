@@ -1,16 +1,14 @@
 package ArraysAndString.SlidingWindow;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Deque;
+import java.util.*;
 
 public class LongestSubarraySum {
 
     public static void main(String[] args) {
-        Integer[] arr = {5, 3, 0, 0, 1, 4, 9}; // Example input
+        Integer[] arr = {1,2,3}; // Example input
         //Output startIndex and endIndex, here is should be 2 , 5 i.e. [0, 0, 1, 4]
-        System.out.println(Arrays.toString(longestSubarrayWithSumLessThanOrEqualToMax(arr, 5)));
+     //   System.out.println(Arrays.toString(longestSubarrayWithSumLessThanOrEqualToMax(arr, 5)));
+        System.out.println(subArrays(arr));
     }
 
     private static int[] longestSubarrayWithSumLessThanOrEqualToMax(Integer[] arr, int max) {
@@ -36,6 +34,41 @@ public class LongestSubarraySum {
         }
         output[0]=firstIndex;
         output[1]=lastIndex;
+        return output;
+    }
+
+    private static int[] longestSubarrayWithSumLessThanOrEqualToMaxWithoutDequee(Integer[] arr, int max) {
+        int sum = 0, left = 0, outputLeft = 0, outputRight = -1, maxLen = 0;
+        for (int right = 0; right < arr.length; right++) {
+            sum += arr[right];
+
+            while (sum > max) {
+                sum -= arr[left];
+                left++;
+            }
+
+            int windowSize = right - left + 1;
+            if (windowSize > maxLen) {
+                maxLen = windowSize;
+                outputLeft = left;
+                outputRight = right;
+            }
+        }
+        return new int[]{outputLeft, outputRight};
+    }
+
+    private static List<List<Integer>> subArrays(Integer[] array)
+    {
+        List<List<Integer>> output= new ArrayList<>();
+        for(int i=0 ; i<array.length; i++)
+        {
+            List<Integer> temp = new ArrayList<>();
+            for (int j = i; j<array.length;j++)
+            {
+                temp.add(array[j]);
+                output.add(new ArrayList<>(temp));
+            }
+        }
         return output;
     }
 }
