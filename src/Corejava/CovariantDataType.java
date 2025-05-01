@@ -4,7 +4,8 @@
 package Corejava;
 
 /**
- * Covariant return type is a feature introduced in Java 5 that allows a method to override a parent method while returning a more specific (subtype) object instead of the parent class type. This improves code flexibility and reduces the need for explicit type casting.
+ * Covariant return type is a feature introduced in Java 5 that allows a method to override a parent method while returning a more specific (subtype) object instead of the parent class type.
+ * This improves code flexibility and reduces the need for explicit type casting.
  * Not applicable for primitive data types
  */
 public class CovariantDataType {
