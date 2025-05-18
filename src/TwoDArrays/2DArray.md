@@ -4,3 +4,5 @@
 
     1D index of (a,b)index in 4*5 2D array = a*5 + b
     2D index of x in 4*5 array = x/5, x%5 , In both claculation column only plays role
+
+    Arrays.sort(arr, Comparator.comparingInt(a->a[0])); //sort using first elemetn of 2D array, where arr is 2D array

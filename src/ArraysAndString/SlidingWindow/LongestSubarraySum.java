@@ -7,7 +7,7 @@ public class LongestSubarraySum {
     public static void main(String[] args) {
         Integer[] arr = {1,2,3}; // Example input
         //Output startIndex and endIndex, here is should be 2 , 5 i.e. [0, 0, 1, 4]
-     //   System.out.println(Arrays.toString(longestSubarrayWithSumLessThanOrEqualToMax(arr, 5)));
+        System.out.println(Arrays.toString(longestSubarrayWithSumLessThanOrEqualToMax(arr, 5)));
         System.out.println(subArrays(arr));
     }
 

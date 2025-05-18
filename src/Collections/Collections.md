@@ -74,10 +74,14 @@ Stack:
 Dequeue: 
 
     It has all functions of stack and queue like push pop peek offer poll except search
-    Useful one: offer / peekFirst / peekLast / pollFirst / pollLast / size
+    Useful one: offer/ pool/ peek / peekFirst / peekLast / pollFirst / pollLast / size
                 first and last means inserted first or inserted last
+
+Heap:
+
+    By default store in increasing order, method: offer/ poll/ peek
     
-Time complexity of Queue Stack and QUEUE are O(1) 
+Time complexity of Queue Stack and DEQUEUE are O(1) 
 
 LinkedList: 
 
@@ -86,7 +90,16 @@ LinkedList:
     head.next=temp  : head= 3->10->0
     temp=temp.next : head= 3->10->0 and temp = 0 (will not change head structure sinc they are only varaibles)
 
-TreeMap & TreeSet (Uses Red Black Tree): 
+TreeMap & TreeSet (Uses Red Black Tree): Use where you need sorted unique element, else go for heap  
 
-    TreeMap : pollFirstEntry , pollLastEntry , firstEntry, lastEntry
-    TreeSet: pollFirst, pollLast, getFirst and getLast (get introduced in Java21)
+    TreeSet: [10, 20, 30, 40]
+        first(): first elelemt
+        last(): last element
+        pollFirst(): remove and return first element
+        pollLast(): remove and return last element
+        ceiling(20): least element ≥ 20, or null= 20
+        floor(20): greatest element <= 20, or null= 20
+        higher(20): least element > 20, or null, output= 30
+        lower(20): greatest element < 20, or null= 10
+
+    TreeMap : firstKey() , firstEntry(), pollFirstEntry(), pollLastEntry(), ceilingEntry(20), ceilingKey(20) .. same for floor/higher/lower
