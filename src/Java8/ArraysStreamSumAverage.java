@@ -2,8 +2,10 @@ package Java8;
 
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.OptionalDouble;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ArraysStreamSumAverage {
@@ -16,6 +18,10 @@ public class ArraysStreamSumAverage {
         int sumOfSquareOfEvenNumbers = Arrays.stream(arr).
                 filter(a -> a % 2 == 0).map(a -> a * a). //Intermediate
                         sum(); //Terminal
+
+        List<Integer> list = Arrays.stream(arr)  // returns IntStream (primitive int)
+                .boxed()      // converts to Stream<Integer>
+                .collect(Collectors.toList()); // collect to List<Integer>
         System.out.println(sumOfSquareOfEvenNumbers);
 
         //Average of odd number

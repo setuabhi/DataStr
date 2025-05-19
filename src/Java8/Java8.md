@@ -7,3 +7,4 @@
        Consumer: Represents an operation that accepts a single input argument and returns no result.
        Function: Represents a function that accepts one argument and produces a result. 
        Supplier: Represents a supplier of results.
+5. Array stream and boxed case
