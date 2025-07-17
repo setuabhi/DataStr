@@ -13,10 +13,17 @@ public record Emplyee(String id, String name) {
     }
 
     /*
-    Objects.hash(1, "Abhi"):
+    Objects.hash(7, "Abhi"):
     int result = 1;
-    result = 31 * result + Integer.hashCode(id);
+    result = 31 * result + Integer.hashCode(7);
     result = 31 * result + (name == null ? 0 : name.hashCode());
+
+    above one is like:
+    int result = 1;
+    for (Object element : values)
+    {
+    result = 31 * result + (element == null ? 0 : element.hashCode());
+    }
      */
     @Override
     public int hashCode() {
