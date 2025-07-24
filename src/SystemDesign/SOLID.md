@@ -115,13 +115,13 @@
         public void fly() {
         System.out.println("Flying...");
         }
+        void eat(){
+        System.out.println("Eating...");
+        }
     }
     
     class Penguin extends Bird {
-        @Override
-        public void fly() {
-        throw new UnsupportedOperationException("Penguins can't fly!");
-        }
+        //LSV fails as fly method is not substitutable
     }
     
     // Applying LSP
@@ -152,7 +152,7 @@
 
 **Interface Segregation Principle (ISP)**
 
-    Clients should not be forced to depend on interfaces they do not use, Interface class should have least generic methods to override
+    Clients should not be forced to depend on interfaces they do not use, Interface class should have least generic methods to override. while in Liscov we don't force as it was a class but there also all methods should be substitutable 
 
 **Java Code**
 
@@ -172,7 +172,7 @@
         }
     }
     
-    // Applying ISP
+    // Applying ISP while in LSV one interface is dependent on other, he we splitted completly
     interface Workable {
         void work();
     }
