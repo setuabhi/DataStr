@@ -4,6 +4,8 @@ Learn: Arrays basics, time complexity, sliding window intro
 
 Code:
 
+    Print all subarray
+
     Maximum subarray (Kadane's Algorithm)
     
     Best time to buy and sell stock
