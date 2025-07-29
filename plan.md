@@ -1,267 +1,302 @@
-Arrays
+🧠 Week 1: Arrays + Basic Patterns
+📅 Day 1
+Learn: Arrays basics, time complexity, sliding window intro
 
-    Easy:
-    Find the Largest Element in an Array
-    Remove Duplicates from Sorted Array
-    Rotate Array
-    Move Zeroes
-    Find the Missing Number
+Code:
+
+    Maximum subarray (Kadane's Algorithm)
     
-    Medium:
-    Maximum Subarray Sum (Kadane's Algorithm)
-    Merge Intervals
-    Next Permutation
-    Subarray Sum Equals K
-    Product of Array Except Self
-
-Strings
-
-    Easy:
-    Reverse String
-    Valid Anagram
-    Implement strStr()
-    Longest Common Prefix
-    Count and Say
+    Best time to buy and sell stock
     
-    Medium:
-    Longest Substring Without Repeating Characters
-    Longest Palindromic Substring
-    Group Anagrams
-    String to Integer (atoi)
-    Minimum Window Substring
+    Sliding window maximum (fixed window)
 
-Linked Lists
+📅 Day 2
+Learn: Two pointers, prefix sum
 
-    Easy:
-    Reverse a Linked List
-    Merge Two Sorted Lists
-    Remove N-th Node From End of List
-    Detect Cycle in a Linked List
-    Delete Node in a Linked List
+Code:
+
+    Two sum
     
-    Medium:
-    Add Two Numbers
-    Copy List with Random Pointer
-    Intersection of Two Linked Lists
-    Flatten a Multilevel Doubly Linked List
-    Sort List
-
-Stacks & Queues
-
-    Easy:
-    Valid Parentheses
-    Implement Queue using Stacks
-    Implement Stack using Queues
-    Min Stack
-    Baseball Game
+    Container with most water
     
-    Medium:
-    Evaluate Reverse Polish Notation
-    Simplify Path
-    Next Greater Element II
-    Asteroid Collision
-    LRU Cache
+    Subarray sum equals K
 
-Trees
+📅 Day 3
+Learn: Binary search on sorted array
 
-    Easy:
-    Maximum Depth of Binary Tree
-    Symmetric Tree
-    Binary Tree Inorder Traversal
-    Path Sum
-    Same Tree
+Code:
+
+    Binary search
     
-    Medium:
-    Binary Tree Level Order Traversal
-    Validate Binary Search Tree
-    Construct Binary Tree from Preorder and Inorder Traversal
-    Kth Smallest Element in a BST
-    Lowest Common Ancestor of a Binary Tree
-
-Graphs
-
-    Easy:
-    Find the Town Judge
-    Find if Path Exists in Graph
-    Flood Fill
-    Number of Islands
-    Clone Graph
+    Search in rotated sorted array
     
-    Medium:
-    Course Schedule
-    Network Delay Time
-    Graph Valid Tree
-    Word Ladder
-    Alien Dictionary
+    Find first and last position of element
 
-Heaps
+📅 Day 4
+Learn: Hashing in arrays
 
-    Easy:
-    Kth Largest Element in a Stream
-    Last Stone Weight
-    Top K Frequent Elements
-    Merge k Sorted Lists
-    Find Median from Data Stream
+Code:
+
+    Majority element
     
-    Medium:
-    Kth Largest Element in an Array
-    Task Scheduler
-    Reorganize String
-    Top K Frequent Words
-    Sliding Window Maximum
-
-Hashing
-
-    Easy:
-    Two Sum
-    Contains Duplicate
-    Intersection of Two Arrays
-    Happy Number
-    First Unique Character in a String
+    Longest consecutive sequence
     
-    Medium:
-    Subarray Sum Equals K
-    Group Anagrams
-    Longest Consecutive Sequence
-    Contiguous Array
-    4Sum II
-
-Sliding Window
-
-    Easy:
-    Maximum Average Subarray I
-    Longest Substring Without Repeating Characters
-    Max subarray length < K
-    Stock buy sell
-    
-    Medium:
-    Longest Repeating Character Replacement
-    Subarrays with K Different Integers-*
-
-Two Pointers
-
-    Easy:
-    Remove Duplicates from Sorted Array
-    Valid Palindrome
-    Two Sum - Input Array Is Sorted
-    Reverse String
-    Move Zeroes
-    
-    Medium:
     3Sum
-    Container With Most Water
-    Trapping Rain Water
-    Subarray Product Less Than K
-    Sort Colors
 
-Binary Search
+📅 Day 5
+Learn: Sorting logic + custom comparators
 
-    Easy:
-    Binary Search
-    Guess Number Higher or Lower
-    Find Smallest Letter Greater Than Target
-    First Bad Version
-    Sqrt(x)
+Code:
+
+    Merge intervals
     
-    Medium:
-    Search in Rotated Sorted Array
-    Find Peak Element
-    Find First and Last Position of Element in Sorted Array
-    Kth Smallest Element in a Sorted Matrix
-    Aggressive Cows (Google Interview Question)
-
-Dynamic Programming (DP)
-
-    Easy:
-    Climbing Stairs
-    Fibonacci Number
-    House Robber
-    Unique Paths
-    Best Time to Buy and Sell Stock
+    Insert interval
     
-    Medium:
-    Coin Change
-    Longest Increasing Subsequence
-    Partition Equal Subset Sum
-    Edit Distance
-    Decode Ways
+    Largest number formed from array
 
-Greedy Algorithms
+📅 Day 6
+Revision + Retest Day
 
-    Easy:
-    Assign Cookies
-    Lemonade Change
-    Maximum Subarray (Kadane’s Algorithm)
-    Jump Game I
-    Gas Station
+Re-attempt: Sliding window, binary search, hash-based problems
+
+📅 Day 7
+Learn: Prefix sum + difference array + practice
+
+Code:
+
+    Range sum query
     
-    Medium:
-    Jump Game II
-    Partition Labels
-    Minimum Number of Platforms (Train Scheduling Problem)
-    Maximum Length of Pair Chain
-    Minimum Cost to Connect Sticks
-
-Bit Manipulation
-
-    Easy:
-    Single Number
-    Power of Two
-    Number of 1 Bits
-    XOR Operation in an Array
-    Counting Bits
+    Min size subarray sum
     
-    Medium:
-    Subsets (using bit manipulation)
-    Divide Two Integers
-    Sum of Two Integers (without using + or -)
-    Find the Duplicate Number
-    Reverse Bits
+    Pivot index
 
-Recursion & Backtracking
+⚙️ Week 2: Strings, Stack, Queue
+📅 Day 8
+Learn: String manip basics
 
-    Easy:
-    Factorial of a Number
-    Power of Three
-    Fibonacci Sequence using Recursion
-    Sum of N Natural Numbers
-    Print All Subsequences of a String
+Code:
+
+    Valid anagram
     
-    Medium:
+    Group anagrams
+    
+    Longest common prefix
+
+📅 Day 9
+Learn: Two-pointer on string
+
+Code:
+
+    Valid palindrome
+    
+    Longest substring without repeat
+    
+    Reverse words in string
+
+📅 Day 10
+Learn: Stack basics + patterns
+
+Code:
+
+    Valid parentheses
+    
+    Min stack
+    
+    Next greater element
+
+📅 Day 11
+Learn: Monotonic stack
+
+Code:
+
+    Daily temperatures
+    
+    Largest rectangle in histogram
+    
+    Trapping rainwater
+
+📅 Day 12
+Learn: Queue + Deque
+
+Code:
+
+    Sliding window max (deque)
+    
+    Implement queue using stacks
+    
+    LRU cache (design problem)
+
+📅 Day 13
+Practice + Retest Day
+
+Re-attempt: Stack/queue questions
+
+📅 Day 14
+Learn: String pattern matching
+
+Code:
+    
+    KMP prefix table (just build table)
+    
+    Longest palindromic substring (expand around center)
+
+🌳 Week 3: Linked List, Recursion, Tree Basics
+📅 Day 15
+Learn: Linked List basics
+
+Code:
+
+    Reverse LL
+    
+    Detect cycle in LL
+    
+    Merge two sorted lists
+
+📅 Day 16
+Learn: LL medium
+
+Code:
+
+    Intersection of 2 LL
+    
+    Remove nth from end
+    
+    Copy list with random pointer
+
+📅 Day 17
+Learn: Recursion + Backtracking intro
+
+Code:
+
+    Subsets
+    
+    Permutations
+    
     Generate Parentheses
-    Word Search
-    Subsets II
-    Letter Combinations of a Phone Number
-    Combination Sum
 
-Divide & Conquer
+📅 Day 18
+Learn: Binary Tree Basics
 
-    Easy:
-    Merge Sort
-    Quick Sort
-    Find Maximum and Minimum in an Array
-    Binary Search (Recursion)
-    Power(x, n)
+Code:
+
+    Inorder, Preorder, Postorder
     
-    Medium:
-    Kth Largest Element in an Array
-    Median of Two Sorted Arrays
-    Count Inversions in an Array
-    Search a 2D Matrix II
-    Majority Element
-
-Math-based Problems
-
-    Easy:
-    Count Primes
-    Happy Number
-    Factorial Trailing Zeroes
-    Palindrome Number
-    Excel Sheet Column Title
+    Level Order
     
-    Medium:
-    Pow(x, n)
-    Integer to Roman
-    Roman to Integer
-    Greatest Common Divisor of Strings
-    Check if a Number is a Perfect Square
+    Max depth of binary tree
+
+📅 Day 19
+Learn: Tree Recursion patterns
+
+Code:
+
+    Diameter of tree
+    
+    Lowest Common Ancestor
+    
+    Same tree / Symmetric tree
+
+📅 Day 20
+Revision Day (Linked List, Tree, Backtracking)
+
+📅 Day 21
+Learn: Binary Search Tree
+
+Code:
+
+    Validate BST
+    
+    Insert/Delete in BST
+    
+    Kth smallest in BST
+
+🔗 Week 4: Heap, Graph, DP (Intro Only)
+📅 Day 22
+Learn: Heap / PriorityQueue
+
+Code:
+
+    Kth largest element
+    
+    Merge K sorted lists
+    
+    Top K frequent elements
+
+📅 Day 23
+Learn: Graph Basics (DFS, BFS)
+
+Code:
+
+    Clone graph
+    
+    Number of islands
+    
+    Graph valid tree
+
+📅 Day 24
+Learn: Union Find (Disjoint Set)
+
+Code:
+
+    Find redundant connection
+    
+    Friend circles
+    
+    Path compression + union by rank
+
+📅 Day 25
+Learn: DP Basics
+
+Code:
+
+    Climbing stairs
+    
+    Fibonacci with memoization
+    
+    House robber
+
+📅 Day 26
+Learn: 1D → 2D DP
+
+Code:
+
+    Longest common subsequence
+    
+    Longest increasing subsequence
+    
+    0/1 Knapsack intro
+
+📅 Day 27
+Revision + Retest (Heap, Graph, DP)
+
+📅 Day 28
+Full Mock (Choose 4-5 random questions from covered patterns. Solve with timer.)
+
+🧪 Final 2 Days: Polish and Master Patterns
+📅 Day 29
+Famous Patterns Review
+
+    Sliding Window
+    
+    Two Pointers
+    
+    Fast-Slow Pointer
+    
+    Monotonic Stack
+    
+    Backtracking
+    
+    BFS/DFS
+    
+    Prefix Sum
+    
+    Binary Search on Answer
+
+📅 Day 30
+Final Mock Test + Reflection
+
+    Pick 6 random questions, 2 hours timed
+    
+    Note your mistakes
+    
+    Identify weak spots and list follow-ups
