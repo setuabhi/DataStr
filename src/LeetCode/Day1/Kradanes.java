@@ -15,16 +15,16 @@ public class Kradanes {
 
     private static int maxSumN2(int[] arr) {
         int MaxSum = Integer.MIN_VALUE;
-        int startIndexOfMaxSubArray = -1, endIndexOfMaxSubArray = -1;
+        int currentSum = 0, startIndexOfMaxSubArray = 0, endIndexOfMaxSubArray = 0;
         for (int i = 0; i < arr.length; i++) {
-            int sumInRange = 0;
+            currentSum = 0;
             for (int j = i; j < arr.length; j++) {
-                sumInRange += arr[j]; // all sub-arrays sum, 1st time -2 the -2+1
-                if (sumInRange > MaxSum) {
+                currentSum += arr[j]; // all sub-arrays sum, 1st time -2 the -2+1
+                if (currentSum > MaxSum) {
                     //bcoz i to j is the subarray
                     startIndexOfMaxSubArray = i;
                     endIndexOfMaxSubArray = j;
-                    MaxSum = sumInRange;
+                    MaxSum = currentSum;
                 }
             }
         }
