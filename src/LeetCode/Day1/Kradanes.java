@@ -1,7 +1,10 @@
 package LeetCode.Day1;
 
 /**
- * Sub-array with maximum size
+ * Initialize MaxSum to math min
+ * Initialize currentSum , startIndex, EndIndex, tempStartIndex to 0
+ * Iterate from first element, calculate currentSum, if it's more than MaxSum, update startIndex, EndIndex, MaxSum
+ * if currentSum is negative, no need to carry forward, set it to zero and update tempStartIndex to next element
  */
 public class Kradanes {
     public static void main(String[] args) {
@@ -30,28 +33,27 @@ public class Kradanes {
     }
 
     private static int kradanes(int[] arr) {
-        int MaxSum = Integer.MIN_VALUE;
-        int sumOfSubArray = 0;
-        int startIndexOfMaxSubArray = -1, endIndexOfMaxSubArray = -1, tempStartIndex=0;
+        int maxSum = Integer.MIN_VALUE;
+        int currentSum = 0, startIndexOfMaxSubArray = 0, endIndexOfMaxSubArray = 0, tempStartIndex=0;
         for (int i = 0; i < arr.length; i++) {
-            sumOfSubArray += arr[i];
-            if (sumOfSubArray > MaxSum) {
-                MaxSum = sumOfSubArray;
+            currentSum += arr[i];
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
                 startIndexOfMaxSubArray=tempStartIndex;
                 endIndexOfMaxSubArray = i;
             }
-            if (sumOfSubArray < 0) {
-                sumOfSubArray = 0; // no need to carry forward negative number
+            if (currentSum < 0) {
+                currentSum = 0; // no need to carry forward negative number
                 tempStartIndex = i + 1; // We are starting fresh from next index
             }
         }
 
-        if (MaxSum == arr[0]) // to handle case if all no are negative and first is highest
+        if (maxSum == arr[0]) // to handle case if all no are negative and first is highest
         {
             startIndexOfMaxSubArray = 0;
         }
         System.out.println(startIndexOfMaxSubArray + " " + endIndexOfMaxSubArray);
-        return MaxSum;
+        return maxSum;
     }
 
 }
