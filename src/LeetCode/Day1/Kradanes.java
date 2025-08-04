@@ -15,7 +15,7 @@ public class Kradanes {
 
     private static int maxSumN2(int[] arr) {
         int MaxSum = Integer.MIN_VALUE;
-        int currentSum = 0, startIndexOfMaxSubArray = 0, endIndexOfMaxSubArray = 0;
+        int currentSum , startIndexOfMaxSubArray = 0, endIndexOfMaxSubArray = 0;
         for (int i = 0; i < arr.length; i++) {
             currentSum = 0;
             for (int j = i; j < arr.length; j++) {

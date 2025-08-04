@@ -1,10 +1,10 @@
 Day 1: Arrays (Basics)
 Arrays are fundamental and highly asked , Start with simple array operations and foundational problems:
-
-    Subarray with given sum
-    
+  
     Kadane’s algorithm (Maximum subarray sum)
     
+    Subarray with given sum
+
     Merge two sorted arrays
     
     Dutch national flag algorithm (Sort an array of 0s, 1s, and 2s)
