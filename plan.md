@@ -18,7 +18,7 @@ Practice problems that use these patterns:
 
     Longest Substring Without Repeating Characters (sliding window)
     
-    Maximum Sum Subarray of Size K (fixed-size sliding window)
+    Maximum Sum Subarray of Size <= K (fixed-size sliding window)
     
     Minimum Window Substring (find smallest substring containing all chars)
     
