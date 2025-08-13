@@ -5,6 +5,7 @@ import java.util.HashMap;
 /**
  * Use hashmap, key = sum till index i, value = i
  * if (currentSum - Target) present in hashmap then we found the result.
+ * Store first occurence of sum in Hashmap
  */
 public class SubArrayWithGivenSum {
     public static void main(String[] args) {

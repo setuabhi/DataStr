@@ -12,7 +12,7 @@ Arrays are fundamental and highly asked , Start with simple array operations and
     Trapping Rain Water
     
 
-Day 2: Arrays (Patterns – Two Pointers & Sliding Window)
+Day 2: Arrays (Patterns – Two Pointers & Sliding Window): problem starts with Maximum/ minimum/ Longest/ Smallest
 Learn two-pointer and sliding-window techniques – powerful for array/string problems
 Practice problems that use these patterns:
 
