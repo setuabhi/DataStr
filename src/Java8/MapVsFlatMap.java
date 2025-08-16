@@ -12,7 +12,7 @@ public class MapVsFlatMap {
         arrL.add(Arrays.asList("pramod", "das"));
         arrL.add(Arrays.asList("sonali", "kumari"));
 
-        List<String> flatenigExample = arrL.stream().flatMap(a->a.stream()).map(s->s.toUpperCase()).collect(Collectors.toList());
-        System.out.println(flatenigExample);
+        List<String> flateningExample = arrL.stream().flatMap(a->a.stream()).map(s->s.toUpperCase()).collect(Collectors.toList());
+        System.out.println(flateningExample);
     }
 }

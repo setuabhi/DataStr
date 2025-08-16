@@ -2,7 +2,8 @@ package LeetCode.Day1;
 
 /**
  * Initialize MaxSum to math min
- * Initialize currentSum , startIndex, EndIndex, tempStartIndex to 0
+ * Initialize currentSum , tempStartIndex to 0
+ * Initialize startOutputIndex and endOutputIndex initialize to -1
  * Iterate from first element, calculate currentSum, if it's more than MaxSum, update startIndex, EndIndex, MaxSum
  * if currentSum is negative, no need to carry forward, set it to zero and update tempStartIndex to next element
  */
@@ -34,7 +35,8 @@ public class Kradanes {
 
     private static int kradanes(int[] arr) {
         int maxSum = Integer.MIN_VALUE;
-        int currentSum = 0, startIndexOfMaxSubArray = -1, endIndexOfMaxSubArray = -1, tempStartIndex=-1;
+        int currentSum = 0, startIndexOfMaxSubArray = -1, endIndexOfMaxSubArray = -1;
+        int tempStartIndex=0;
         for (int i = 0; i < arr.length; i++) {
             currentSum += arr[i];
             if (currentSum > maxSum) {
@@ -48,10 +50,6 @@ public class Kradanes {
             }
         }
 
-        if (maxSum == arr[0]) // to handle case if all no are negative and first is highest
-        {
-            startIndexOfMaxSubArray = 0;
-        }
         System.out.println(startIndexOfMaxSubArray + " " + endIndexOfMaxSubArray);
         return maxSum;
     }

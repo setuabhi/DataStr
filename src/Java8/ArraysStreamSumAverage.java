@@ -22,11 +22,15 @@ public class ArraysStreamSumAverage {
         List<Integer> list = Arrays.stream(arr)  // returns IntStream (primitive int)
                 .boxed()      // converts to Stream<Integer>
                 .collect(Collectors.toList()); // collect to List<Integer>
+
         System.out.println(sumOfSquareOfEvenNumbers);
 
         //Average of odd number
         Double average = Arrays.stream(arr).filter(a->a%2!=0).average().orElse(0.0);
         System.out.println(average);
+
+        //Product of numbers
+        int product=  Arrays.stream(arr).reduce(1,(a,b)->a*b);
 
     }
 }
