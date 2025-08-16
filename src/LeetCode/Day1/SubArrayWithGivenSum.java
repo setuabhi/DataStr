@@ -10,8 +10,8 @@ import java.util.HashMap;
 public class SubArrayWithGivenSum {
     public static void main(String[] args) {
         int[] arr = {4, 1, -3, 2, 10, 6};
-        sumKBrutForce(arr, 6);
-        sumKOptimal(arr, 6);
+        sumKBrutForce(arr, 0);
+        sumKOptimal(arr, 0);
     }
 
     private static void sumKBrutForce(int[] arr, int target) {

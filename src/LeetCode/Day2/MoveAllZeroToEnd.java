@@ -1,4 +1,4 @@
-package LeetCode.Day1;
+package LeetCode.Day2;
 
 import java.util.Arrays;
 
@@ -15,10 +15,14 @@ public class MoveAllZeroToEnd {
     private static void moveToEnd(int[] arr) {
         int counter = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != 0) arr[counter++] = arr[i];
+            if (arr[i] != 0) {
+                arr[counter++] = arr[i];
+            }
         }
 
-        while (counter < arr.length) arr[counter++] = 0;
+        while (counter < arr.length) {
+            arr[counter++] = 0;
+        }
         System.out.println(Arrays.toString(arr));
     }
 }

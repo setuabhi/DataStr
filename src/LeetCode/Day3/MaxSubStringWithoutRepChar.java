@@ -1,4 +1,4 @@
-package LeetCode.Day2;
+package LeetCode.Day3;
 
 import java.util.HashSet;
 

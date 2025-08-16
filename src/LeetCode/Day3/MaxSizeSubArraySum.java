@@ -1,4 +1,4 @@
-package LeetCode.Day2;
+package LeetCode.Day3;
 /**
  * while sumOfWindow greater than maxSum reduces window size by reducing windowLeft and reduce sumOfWindow
  *   sumOfWindow-=arr[windowLeft];
@@ -6,7 +6,7 @@ package LeetCode.Day2;
  *
  *   if(windowRight- windowLeft > maxLength): update result indexes and maxLength;
  */
-public class MaxSubArraySizeLessOrEqualsK {
+public class MaxSizeSubArraySum {
     public static void main(String[] args) {
         int[] arr= {-1,-1,-1,4,0,0,0,-1,-1,6};
         subArraySizeLessEqK(arr,0);

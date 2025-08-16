@@ -1,4 +1,4 @@
-package LeetCode.Day1;
+package LeetCode.Day5;
 
 /**
  * min (leftMax,rightMax) -current
