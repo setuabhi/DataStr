@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-public class HighestLenghtString {
+public class MaxComparatorInStream {
     public static void main(String[] args) {
         List<Employee> arrL = List.of(
                 new Employee("John", "USA"),
@@ -27,20 +27,11 @@ public class HighestLenghtString {
                 .max(Comparator.comparingInt((Employee employee) -> employee.getName().length())
                         .thenComparingInt((Employee employee) -> employee.getAge().length()));
 
-        Optional<Employee> outputWithoutComparator= arrL.stream().
-                max((e1,e2)->Integer.compare(e1.getName().length(),e2.getName().length()));
-
         Optional<Employee> outputReverse= arrL.stream().
                 max((e1,e2)->Integer.compare(e2.getName().length(),e1.getName().length()));
 
         Optional<String> outputString= arrString.stream().
                 max(Comparator.comparingInt(String::length)); //method reference can be used
-
-        Optional<String> outputWithoutComparatorString= arrString.stream().
-                max((s1,s2)->Integer.compare(s1.length(),s2.length()));// method reference can be used
-
-        Optional<String> outputReverseString= arrString.stream().
-                max((s1,s2)->Integer.compare(s2.length(),s1.length())); //method reference can be used
 
         System.out.println(output.get());
     }

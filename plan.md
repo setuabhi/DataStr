@@ -29,6 +29,7 @@ Day 3 – Sliding Window
 Day 4 – Strings Basics
 
     13. Valid Anagram (LC 242)
+    13.1 First non rep character
     14. Longest Common Prefix (LC 14)
     15. Reverse String (LC 344)
     16. Check Balanced Parentheses (LC 20)

@@ -11,9 +11,10 @@ public class GroupByPartitionBy
 {
     public static void main(String[] args) {
         List<Employee> arrL = new ArrayList<>();
+        arrL.add(new Employee("Abhiav","20"));
 
         Map<String,List<Employee>> employeeGroupedByAge = arrL.stream().
-                collect(Collectors.groupingBy(e->e.getAge()));
+                collect(Collectors.groupingBy(Employee::getAge));
 
         // true will be senior list and false will be junior List
         Map<Boolean,List<Employee>> seniorJunior = arrL.stream().

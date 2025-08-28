@@ -16,7 +16,7 @@ public interface FunctionalInterfaceExample {
 
     public class testMain{
         public static void main(String[] args) {
-            FunctionalInterfaceExample f = str->str.toUpperCase();
+            FunctionalInterfaceExample f = String::toUpperCase;
             System.out.println(f.myMethod("abhinav"));
             f.defaultMethod();
             FunctionalInterfaceExample.staticMethod();
