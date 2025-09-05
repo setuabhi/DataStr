@@ -37,7 +37,8 @@ Day 4 – Strings Basics
 Day 5 – Two Pointers
 
     17. Container With Most Water (LC 11, Medium)
-    18. 3Sum (LC 15, Medium)
+    18.1 2Sum (LC 15, Medium)
+    18.2 Three Sum
     19. Sort Colors (LC 75, Medium)
     20. Valid Palindrome (LC 125)
 

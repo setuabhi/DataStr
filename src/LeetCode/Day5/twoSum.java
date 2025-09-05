@@ -1,9 +1,12 @@
-package ArraysAndString;
+package LeetCode.Day5;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * return index of output
+ * return index of output, don't add in separate loop
+ * use only one for loop
  */
 public class twoSum {
     public static void main(String[] args) {
