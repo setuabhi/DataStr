@@ -1,10 +1,11 @@
-package LeetCode.Day5;
+package LeetCode.day8;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * There will be only one output
  * return index of output, don't add in separate loop
  * use only one for loop
  */
