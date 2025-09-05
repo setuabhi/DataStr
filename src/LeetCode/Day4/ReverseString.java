@@ -20,7 +20,7 @@ public class ReverseString {
     }
 
     private static String reverseItUsingBuffer(String s) {
-        StringBuffer sb = new StringBuffer(s);
+        StringBuilder sb = new StringBuilder(s);
         return sb.reverse().toString();
     }
 }

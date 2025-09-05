@@ -11,13 +11,15 @@ public class FirstNonRepCharacter {
     }
 
     private static Object firstNonRepChar(String s) {
-        LinkedHashMap<Character, Integer> linkedHashMap = new LinkedHashMap<>();
+        HashMap<Character, Integer> hashMap = new HashMap<>();
 
         for (char c : s.toCharArray()) {
-            linkedHashMap.put(c, linkedHashMap.getOrDefault(c, 0) + 1);
+            hashMap.put(c, hashMap.getOrDefault(c, 0) + 1);
         }
-        for (Map.Entry<Character, Integer> entry : linkedHashMap.entrySet()) {
-            if (entry.getValue() == 1) return entry.getKey();
+        for (char c : s.toCharArray()) {
+            if (hashMap.get(c) == 1) {
+                return c;
+            }
         }
         return null;
     }
