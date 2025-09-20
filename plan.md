@@ -17,11 +17,13 @@ Day 2 – Arrays Advanced
     5. Product of Array Except Self (LC 238, Medium)
     6. Majority Element (LC 169)
     7. Find Missing Number (LC 268)
+    7.a. LeetCode 41: First Missing Positive.
     8. Move Zeroes (LC 283)
 
 Day 3 – Sliding Window
 
     9. Maximum Sum Subarray of Size K (GFG)
+    9.a. 2461. Maximum Sum of Distinct Subarrays With Length K
     10. Longest Substring Without Repeating Characters (LC 3)
     11. Maximum Size Subarray Sum (LC 209, Medium)
     12. Permutation in String (LC 567, Medium)
