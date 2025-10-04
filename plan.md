@@ -44,15 +44,16 @@ Day 5 – Two Pointers
 
 Day 6 – Searching & Sorting
 
-    21. Binary Search (LC 704)
-    21.1 Frequency of given in sorted aaray
+    21. Binary Search (LC 704) 
+    21.1 Frequency of given in sorted array
     22. Search in Rotated Sorted Array (LC 33, Medium)
     23. Find Minimum in Rotated Sorted Array (LC 153, Medium)
-    24. Merge Sorted Array (LC 88)
+    24. Merge Two Sorted Array and update the exsiting two array (LC 88)
     24.1 Quick and Merge Sort
 
 Day 7 – 2D Arrays / Matrices
 
+    25. Merge Intervals
     25. Set Matrix Zeroes (LC 73, Medium)
     26. Spiral Matrix (LC 54, Medium)
     27. Rotate Image (LC 48, Medium)
