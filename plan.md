@@ -54,7 +54,7 @@ Day 6 – Searching & Sorting
 Day 7 – 2D Arrays / Matrices
 
     25.0 Merge Intervals
-    25. Set Matrix Zeroes (LC 73, Medium)
+    25. Set Matrix Zeroes - set entire row to zero if any data is zero (LC 73, Medium)
     26. Spiral Matrix (LC 54, Medium)
     27. Rotate Image (LC 48, Medium)
     28. Word Search (LC 79, Medium)
