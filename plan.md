@@ -49,7 +49,7 @@ Day 6 – Searching & Sorting
     22. Search in Rotated Sorted Array (LC 33, Medium)
     23. Find Minimum in Rotated Sorted Array (LC 153, Medium)
     24. Merge Two Sorted Array and update the exsiting two array (LC 88)
-    24.1 Quick and Merge Sort
+    24.1 Bubble sort, Quick and Merge Sort
 
 Day 7 – 2D Arrays / Matrices
 
