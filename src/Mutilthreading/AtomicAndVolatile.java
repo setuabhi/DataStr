@@ -6,14 +6,6 @@ public class AtomicAndVolatile {
     public volatile int count = 0;
     public AtomicInteger countAtomic = new AtomicInteger(0);
 
-    public void incrementAtomic() {
-        countAtomic.incrementAndGet(); // atomic operation
-    }
-
-    public void increment() {
-        count++;
-    }
-
     public static void main(String[] args) throws InterruptedException {
         AtomicAndVolatile atomicAndVolatile = new AtomicAndVolatile();
         Thread t1 = new Thread(() -> {
@@ -35,5 +27,13 @@ public class AtomicAndVolatile {
         t2.join(); //When you call t2.join() the main thread will wait for t2 to finish before continuing.
         System.out.println(atomicAndVolatile.count);
         System.out.println(atomicAndVolatile.countAtomic);
+    }
+
+    public void incrementAtomic() {
+        countAtomic.incrementAndGet(); // atomic operation
+    }
+
+    public void increment() {
+        count++;
     }
 }

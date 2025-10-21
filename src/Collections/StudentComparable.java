@@ -17,16 +17,6 @@ public class StudentComparable implements Comparable<StudentComparable> {
         this.name = name;
     }
 
-    @Override
-    public int compareTo(StudentComparable other) {
-        return Integer.compare(this.id , other.id); // Natural ordering by ID
-    }
-
-    @Override
-    public String toString() {
-        return "Student{id=" + id + ", name='" + name + "'}";
-    }
-
     public static void main(String[] args) {
         List<StudentComparable> students = new ArrayList<>();
         students.add(new StudentComparable(3, "Alice"));
@@ -37,6 +27,16 @@ public class StudentComparable implements Comparable<StudentComparable> {
         Collections.sort(students);
 
         System.out.println("Sorted by ID (Comparable): " + students);
+    }
+
+    @Override
+    public int compareTo(StudentComparable other) {
+        return Integer.compare(this.id, other.id); // Natural ordering by ID
+    }
+
+    @Override
+    public String toString() {
+        return "Student{id=" + id + ", name='" + name + "'}";
     }
 }
 

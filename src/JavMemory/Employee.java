@@ -1,8 +1,8 @@
 package JavMemory;
 
 public class Employee {
-    private  String name;
-    private  String age;
+    private String name;
+    private String age;
 
     public Employee(String name, String age) {
         this.name = name;

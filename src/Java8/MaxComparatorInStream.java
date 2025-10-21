@@ -27,10 +27,10 @@ public class MaxComparatorInStream {
                 .max(Comparator.comparingInt((Employee employee) -> employee.getName().length())
                         .thenComparingInt((Employee employee) -> employee.getAge().length()));
 
-        Optional<Employee> outputReverse= arrL.stream().
-                max((e1,e2)->Integer.compare(e2.getName().length(),e1.getName().length()));
+        Optional<Employee> outputReverse = arrL.stream().
+                max((e1, e2) -> Integer.compare(e2.getName().length(), e1.getName().length()));
 
-        Optional<String> outputString= arrString.stream().
+        Optional<String> outputString = arrString.stream().
                 max(Comparator.comparingInt(String::length)); //method reference can be used
 
         System.out.println(output.get());

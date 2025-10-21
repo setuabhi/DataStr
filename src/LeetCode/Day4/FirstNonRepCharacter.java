@@ -1,8 +1,6 @@
 package LeetCode.Day4;
 
-import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.stream.Collectors;
+import java.util.HashMap;
 
 public class FirstNonRepCharacter {
     public static void main(String[] args) {

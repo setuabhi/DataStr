@@ -12,8 +12,32 @@ public class WaitNotifyPrintOddEven {
         this.max = max;
     }
 
+    public static void main(String[] args) {
+        WaitNotifyPrintOddEven waitNotify = new WaitNotifyPrintOddEven(10);
+        Thread t1 = new Thread(() -> {
+            try {
+                waitNotify.printEven();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        Thread t2 = new Thread(() -> {
+            try {
+                waitNotify.printOdd();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        t1.setName("Even Thread");
+        t1.start();
+        t2.setName("Odd Thread");
+        t2.start();
+
+    }
+
     void printEven() throws InterruptedException {
-        while (x<=max) {
+        while (x <= max) {
             synchronized (this) {
                 if (x % 2 != 0) {
                     System.out.println("Waiting for Odd Thread Notify");
@@ -30,7 +54,7 @@ public class WaitNotifyPrintOddEven {
     }
 
     void printOdd() throws InterruptedException {
-        while (x<=max) {
+        while (x <= max) {
             synchronized (this) {
                 if (x % 2 == 0) {
                     System.out.println("Waiting for Even Thread Notify");
@@ -43,29 +67,5 @@ public class WaitNotifyPrintOddEven {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        WaitNotifyPrintOddEven waitNotify = new WaitNotifyPrintOddEven(10);
-        Thread t1 = new Thread(() -> {
-                try {
-                    waitNotify.printEven();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-        });
-
-        Thread t2 = new Thread(() -> {
-                try {
-                    waitNotify.printOdd();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-        });
-        t1.setName("Even Thread");
-        t1.start();
-        t2.setName("Odd Thread");
-        t2.start();
-
     }
 }

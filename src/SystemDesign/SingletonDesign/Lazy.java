@@ -7,7 +7,8 @@ public class Lazy {
     private static Lazy instance;
 
     // Private constructor prevents instantiation
-    private Lazy() {}
+    private Lazy() {
+    }
 
     // Synchronized method ensures thread safety
     public static synchronized Lazy getInstance() {

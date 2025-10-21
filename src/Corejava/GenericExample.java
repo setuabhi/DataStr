@@ -3,16 +3,8 @@ package Corejava;
 import java.util.List;
 
 //Generic class , T comes after class name
-public class GenericExample <T> {
+public class GenericExample<T> {
     private T value;
-
-    public void setValue(T value) {
-        this.value = value;
-    }
-
-    public T getValue() {
-        return value;
-    }
 
     // Generic static method, T comes before return type
     public static <T> void printList(List<T> list) {
@@ -34,8 +26,6 @@ public class GenericExample <T> {
         }
     }
 
-
-
     public static void main(String[] args) {
         GenericExample<String> stringBox = new GenericExample<>();
         stringBox.setValue("Hello, Generics!");
@@ -49,21 +39,30 @@ public class GenericExample <T> {
         Integer[] intArray = {1, 2, 3};
 
     }
-}
 
-/** control type too
-*  Only accepts Number or its subclasses
-*/
-class Calculator<T extends Number> {
-    public double square(T number) {
-        return number.doubleValue() * number.doubleValue();
+    public T getValue() {
+        return value;
     }
 
+    public void setValue(T value) {
+        this.value = value;
+    }
+}
+
+/**
+ * control type too
+ * Only accepts Number or its subclasses
+ */
+class Calculator<T extends Number> {
     public static void main(String[] args) {
         Calculator<Integer> intCalc = new Calculator<>();
         System.out.println(intCalc.square(5));  // Output: 25.0
 
         Calculator<Double> doubleCalc = new Calculator<>();
         System.out.println(doubleCalc.square(3.14));  // Output: 9.8596
+    }
+
+    public double square(T number) {
+        return number.doubleValue() * number.doubleValue();
     }
 }

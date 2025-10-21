@@ -10,18 +10,13 @@ public class BalancedParathesis {
 
     private static boolean checkValid(String s) {
         Stack<Character> stack = new Stack<>();
-        for(char c: s.toCharArray())
-        {
-            if(c=='(' || c=='{' || c=='[')
-            {
+        for (char c : s.toCharArray()) {
+            if (c == '(' || c == '{' || c == '[') {
                 stack.push(c);
-            }
-            else
-            {
-               if(!compare(c,stack.pop()))
-               {
-                   return false;
-               }
+            } else {
+                if (!compare(c, stack.pop())) {
+                    return false;
+                }
             }
         }
         return true;

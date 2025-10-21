@@ -5,23 +5,8 @@ import java.util.List;
 import java.util.concurrent.*;
 
 public class ExecuterService {
-    public  List<Integer> method1() throws InterruptedException {
-        Thread.sleep(2000);
-        return Arrays.asList(1, 2, 3);
-    }
-
-    public  List<Integer> method2() throws InterruptedException  {
-        Thread.sleep(2000);
-        return Arrays.asList(4, 5, 6);
-    }
-
-    public  List<Integer> method3() throws InterruptedException {
-        Thread.sleep(2000);
-        return Arrays.asList(7, 8, 9);
-    }
-
     public static void main(String[] args) {
-        ExecuterService es= new ExecuterService();
+        ExecuterService es = new ExecuterService();
         ExecutorService executor = Executors.newFixedThreadPool(3);
         ExecutorService executorUsingVirtualThread = Executors.newVirtualThreadPerTaskExecutor(); //No need to define pool size
 
@@ -94,6 +79,21 @@ public class ExecuterService {
         } finally {
             executor.shutdown();
         }
+    }
+
+    public List<Integer> method1() throws InterruptedException {
+        Thread.sleep(2000);
+        return Arrays.asList(1, 2, 3);
+    }
+
+    public List<Integer> method2() throws InterruptedException {
+        Thread.sleep(2000);
+        return Arrays.asList(4, 5, 6);
+    }
+
+    public List<Integer> method3() throws InterruptedException {
+        Thread.sleep(2000);
+        return Arrays.asList(7, 8, 9);
     }
 
 }

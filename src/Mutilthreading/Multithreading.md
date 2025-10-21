@@ -1,15 +1,19 @@
-1. Multithreading is a concurrent execution of multiple threads in a single process 
+1. Multithreading is a concurrent execution of multiple threads in a single process
    to achieve maximum utilization of CPU.
 
-2. A process is a standalone instance of a running program that has its own memory space, system resources, and execution environment. 
-   A thread, on the other hand, is a lightweight process that exists within a process and shares the same memory space, system resources, and execution environment with other threads in the same process.
-   Executors are higher-level abstractions for managing threads in Java. Executors provide a way to manage a pool of threads and execute tasks concurrently.
-   We can create threads directly using new keyword or with the help of executer service 
+2. A process is a standalone instance of a running program that has its own memory space, system resources, and
+   execution environment.
+   A thread, on the other hand, is a lightweight process that exists within a process and shares the same memory space,
+   system resources, and execution environment with other threads in the same process.
+   Executors are higher-level abstractions for managing threads in Java. Executors provide a way to manage a pool of
+   threads and execute tasks concurrently.
+   We can create threads directly using new keyword or with the help of executer service
 
 3. Extending the Thread class limits the subclass because it can't extend any other class,
    whereas Runnable is a functional interface and can be used with the Thread class or any other class.
 
-4. Thread.State enum provides constants for each of these states, Thread.getState() method can be used to determine the current state of a thread.
+4. Thread.State enum provides constants for each of these states, Thread.getState() method can be used to determine the
+   current state of a thread.
 
 5.**In Java, a thread can exist in one of the following states:**
 

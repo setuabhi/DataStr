@@ -1,6 +1,19 @@
 package Mutilthreading;
 
 public class WaitNotifyEasy {
+    public static void main(String[] args) {
+        WaitNotifyEasy waitNotify = new WaitNotifyEasy();
+
+        // Student Thread (Waits for signal)
+        Thread student = new Thread(waitNotify::waitForTeacher);
+
+        // Teacher Thread (Gives signal after some time)
+        Thread teacher = new Thread(waitNotify::giveSignal);
+
+        student.start();
+        teacher.start();
+    }
+
     public void waitForTeacher() {
         synchronized (this) {
             try {
@@ -23,18 +36,5 @@ public class WaitNotifyEasy {
             System.out.println("Teacher gives the signal!");
             notify();  // Teacher gives signal to wake up student
         }
-    }
-
-    public static void main(String[] args) {
-        WaitNotifyEasy waitNotify = new WaitNotifyEasy();
-
-        // Student Thread (Waits for signal)
-        Thread student = new Thread(waitNotify::waitForTeacher);
-
-        // Teacher Thread (Gives signal after some time)
-        Thread teacher = new Thread(waitNotify::giveSignal);
-
-        student.start();
-        teacher.start();
     }
 }

@@ -10,11 +10,9 @@ public class ContainsDuplicate {
     }
 
     private static boolean checkDuplicate(int[] nums) {
-        HashSet < Integer> hashSet = new HashSet<>();
-        for(int i: nums)
-        {
-            if(!hashSet.add(i))
-            {
+        HashSet<Integer> hashSet = new HashSet<>();
+        for (int i : nums) {
+            if (!hashSet.add(i)) {
                 return true;
             }
         }

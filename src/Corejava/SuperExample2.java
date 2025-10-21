@@ -12,6 +12,7 @@ class Child2 extends SuperExample2 {
         System.out.println("Child constructor");
     }
 }
+
 class SuperExample3 {
 }
 

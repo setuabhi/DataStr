@@ -7,7 +7,8 @@ public class EagerSingleton {
     private static final EagerSingleton INSTANCE = new EagerSingleton();
 
     // Private constructor prevents instantiation
-    private EagerSingleton() {}
+    private EagerSingleton() {
+    }
 
     // Public method to provide access to the instance
     public static EagerSingleton getInstance() {

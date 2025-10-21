@@ -6,7 +6,21 @@ package Mutilthreading;
  */
 public class SynchonizedExample {
 
-    public void method1()  {
+    private final Object lock = new Object();
+
+    public static void main(String[] args) {
+        SynchonizedExample obj1 = new SynchonizedExample();
+        Thread t1 = new Thread(() -> obj1.method1(), "T1");
+        Thread t2 = new Thread(() -> obj1.method2(), "T2");
+        Thread t3 = new Thread(() -> obj1.method4(), "T3");
+//method4 and method1 can be accessed concurrently by multiple threads
+//but method1 and  method2 can't be can't be accessed by multiple thread together
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+
+    public void method1() {
         synchronized (this) {  // Lock current object,
             try {
                 Thread.sleep(5000);
@@ -26,8 +40,7 @@ public class SynchonizedExample {
         System.out.println("method2 works!");
     }
 
-    private final Object lock = new Object();
-    public void method4()  {
+    public void method4() {
         synchronized (lock) {  // Lock current object method4 only
             System.out.println("method4 works!");
         }
@@ -38,18 +51,6 @@ public class SynchonizedExample {
             // execute the synchronized block at a time.
             System.out.println("method5 works");
         }
-    }
-
-    public static void main(String[] args)  {
-        SynchonizedExample obj1 = new SynchonizedExample();
-        Thread t1 = new Thread(() -> obj1.method1(), "T1");
-        Thread t2 = new Thread(() -> obj1.method2(), "T2");
-        Thread t3 = new Thread(() -> obj1.method4(), "T3");
-//method4 and method1 can be accessed concurrently by multiple threads
-//but method1 and  method2 can't be can't be accessed by multiple thread together
-        t1.start();
-        t2.start();
-        t3.start();
     }
 
 

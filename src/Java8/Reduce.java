@@ -1,7 +1,6 @@
 package Java8;
 
 import java.util.Arrays;
-import java.util.Optional;
 import java.util.OptionalInt;
 
 public class Reduce {
@@ -11,8 +10,8 @@ public class Reduce {
         int product = Arrays.stream(arr).reduce(1, (a, b) -> a * b);
 
         //Product of numbers without identity (doesn't always return a value )
-        OptionalInt productOptional = Arrays.stream(arr).reduce( (a, b) -> a * b);
-        if(productOptional.isPresent()) System.out.println(productOptional.getAsInt());
+        OptionalInt productOptional = Arrays.stream(arr).reduce((a, b) -> a * b);
+        if (productOptional.isPresent()) System.out.println(productOptional.getAsInt());
 
     }
 }

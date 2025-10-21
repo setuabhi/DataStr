@@ -8,8 +8,7 @@ Day 1 – Arrays Basics
     1. Best Time to Buy and Sell Stock (LC 121)
     2.0 Print all Subarray
     2.1 Maximum Subarray (LC 53, Kadane’s Algorithm)
-    3. Two Sum (LeetCode 1)
-    3.1 Subarray with given sum
+    3. Subarray with given sum
     4. Contains Duplicate (LC 217)
 
 Day 2 – Arrays Advanced
@@ -37,8 +36,7 @@ Day 4 – Strings Basics
 Day 5 – Two Pointers
 
     17. Container With Most Water (LC 11, Medium)
-    18.1 2Sum (LC 15, Medium)
-    18.2 Three Sum
+    18. Three Sum
     19. Sort Colors (LC 75, Medium)
     20. Valid Palindrome (LC 125)
 

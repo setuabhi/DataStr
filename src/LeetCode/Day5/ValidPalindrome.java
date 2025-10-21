@@ -6,17 +6,16 @@ package LeetCode.Day5;
  */
 public class ValidPalindrome {
     public static void main(String[] args) {
-        String s="abc c b  a  ";
+        String s = "abc c b  a  ";
         System.out.println(checkIt(s));
     }
 
     private static boolean checkIt(String s) {
-        int left=0,right=s.length()-1;
-        while(left<right)
-        {
-            while (left<right && !Character.isAlphabetic(s.charAt(right))) right--;
-            while (left<right && !Character.isAlphabetic(s.charAt(left))) left++;
-            if(s.charAt(right)!=s.charAt(left)) return false;
+        int left = 0, right = s.length() - 1;
+        while (left < right) {
+            while (left < right && !Character.isAlphabetic(s.charAt(right))) right--;
+            while (left < right && !Character.isAlphabetic(s.charAt(left))) left++;
+            if (s.charAt(right) != s.charAt(left)) return false;
             left++;
             right--;
         }

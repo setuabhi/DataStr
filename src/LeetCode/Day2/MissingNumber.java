@@ -9,8 +9,8 @@ public class MissingNumber {
     }
 
     private static int findmissing(int[] nums) {
-        int idealSum= (nums.length * (nums.length+1))/2;
-        int currentSum= Arrays.stream(nums).sum();
-        return idealSum-currentSum;
+        int idealSum = (nums.length * (nums.length + 1)) / 2;
+        int currentSum = Arrays.stream(nums).sum();
+        return idealSum - currentSum;
     }
 }

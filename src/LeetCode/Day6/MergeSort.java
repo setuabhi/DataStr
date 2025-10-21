@@ -14,7 +14,7 @@ public class MergeSort {
 
     private static void mergeSort(int[] A) {
         int n = A.length;
-        if (A.length==1) {
+        if (A.length == 1) {
             return; // Base case: array of size 0 or 1 is already sorted
         }
 
@@ -23,7 +23,7 @@ public class MergeSort {
         // Create left and right subarrays
         int[] left = new int[mid];
         int[] right = new int[n - mid];
-        int rightIndex=0;
+        int rightIndex = 0;
 
         // Copy data into left subarray
         for (int i = 0; i < mid; i++) {

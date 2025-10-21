@@ -13,7 +13,7 @@ public class TreeCollections {
         ts.last();
 
         tm.forEach((key, value) -> {
-            System.out.println(key+ value);
+            System.out.println(key + value);
         });
     }
 }

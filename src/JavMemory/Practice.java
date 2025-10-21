@@ -1,6 +1,7 @@
 package JavMemory;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Practice {
@@ -16,7 +17,7 @@ public class Practice {
                 new Employee("Emily", "France")
         );
 
-        Map<Boolean, List<List<Employee>>> ss=employees.stream()
+        Map<Boolean, List<List<Employee>>> ss = employees.stream()
                 .collect(Collectors.groupingBy(Employee::getAge))
                 .values()
                 .stream()

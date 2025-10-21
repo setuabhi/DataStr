@@ -19,22 +19,21 @@ public class MaximunSumSubarraySizeK {
         for (int i = 0; i < sizeK; i++) {
             currSum += arr[i];
         }
-        maxSum=currSum;
+        maxSum = currSum;
         startOutputIndex = 0;
-        endOutputIndex =sizeK-1;
+        endOutputIndex = sizeK - 1;
 
         for (int i = sizeK; i < arr.length; i++) {
-            currSum+=arr[i];
-            currSum-=arr[i-sizeK];
+            currSum += arr[i];
+            currSum -= arr[i - sizeK];
 
-            if(currSum>maxSum)
-            {
-                maxSum=currSum;
-                endOutputIndex=i;
-                startOutputIndex=i-sizeK+1;
+            if (currSum > maxSum) {
+                maxSum = currSum;
+                endOutputIndex = i;
+                startOutputIndex = i - sizeK + 1;
             }
         }
 
-        System.out.println(maxSum+" "+startOutputIndex+" "+endOutputIndex);
+        System.out.println(maxSum + " " + startOutputIndex + " " + endOutputIndex);
     }
 }

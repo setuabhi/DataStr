@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class MapVsFlatMap {
     public static void main(String[] args) {
-        List<List<String>> arrL= new ArrayList<>();
+        List<List<String>> arrL = new ArrayList<>();
         arrL.add(Arrays.asList("abhi", "sri"));
         arrL.add(Arrays.asList("pramod", "das"));
         arrL.add(Arrays.asList("sonali", "kumari"));

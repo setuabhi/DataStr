@@ -149,7 +149,6 @@
         }
     }
 
-
 **Interface Segregation Principle (ISP)**
 
     Clients should not be forced to depend on interfaces they do not use, Interface class should have least generic methods to override. while in Liscov we don't force as it was a class but there also all methods should be substitutable 
@@ -238,8 +237,10 @@
     }
 
 Problems:
+
 1. The Computer class directly depends on the Keyboard and Monitor classes.
-2. If we want to replace Keyboard or Monitor with a different type (e.g., GamingKeyboard, TouchscreenMonitor), we must modify the Computer class. This violates the Open/Closed Principle (OCP).
+2. If we want to replace Keyboard or Monitor with a different type (e.g., GamingKeyboard, TouchscreenMonitor), we must
+   modify the Computer class. This violates the Open/Closed Principle (OCP).
 
 **Java Code DIP**
 
@@ -287,7 +288,6 @@ Problems:
             computer.start();
         }
     }
-    
 
 **Summary**
 

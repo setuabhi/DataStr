@@ -169,6 +169,7 @@
         System.out.println(s2 == s3); // true (both in SCP)
         System.out.println(s2 == s4); // true (both in SCP)
         System.out.println(s1 == s4); // false (heap vs SCP)
+
 ![img.png](img.png)
 
 12.**Bitwise operator**

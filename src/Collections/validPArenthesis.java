@@ -9,36 +9,30 @@ public class validPArenthesis {
     }
 
     private static boolean checkParenthsis(String s) {
-        Stack<Character> stack= new Stack<>();
-        Boolean output= true;
-        for(int i =0; i<s.length();i++)
-        {
-            char current=s.charAt(i);
-            if(current=='[' || current=='{' || current=='(')
-            {
+        Stack<Character> stack = new Stack<>();
+        Boolean output = true;
+        for (int i = 0; i < s.length(); i++) {
+            char current = s.charAt(i);
+            if (current == '[' || current == '{' || current == '(') {
                 stack.push(current);
-            }
-            else
-            {
-                return compareBoth(current,stack.pop()); // return here itself
+            } else {
+                return compareBoth(current, stack.pop()); // return here itself
             }
         }
-        if (!stack.empty())
-        {
-            output= false; // to handle "([{}]"
+        if (!stack.empty()) {
+            output = false; // to handle "([{}]"
         }
         return output;
     }
 
     private static Boolean compareBoth(char current, Character pop) {
-        if (pop=='{' && current=='}')
+        if (pop == '{' && current == '}')
             return true;
-        else if (pop=='(' && current==')') {
+        else if (pop == '(' && current == ')') {
             return true;
-        } else if (pop=='[' && current==']') {
+        } else if (pop == '[' && current == ']') {
             return true;
-        }
-        else
+        } else
             return false;
     }
 }

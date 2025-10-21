@@ -12,11 +12,13 @@ public class CovariantDataType {
     CovariantDataType get() {
         return this;
     }
+
     Number getNumber() {
         return 10.7; // int auto-boxed to Integer
     }
 
 }
+
 class ChildCovarient extends CovariantDataType {
     @Override
     ChildCovarient get() { // Covariant return type (returning a subtype)
@@ -33,6 +35,7 @@ class ChildCovarient extends CovariantDataType {
         System.out.println("Child method");
     }
 }
+
 class CovariantDemo {
     public static void main(String[] args) {
         ChildCovarient c = new ChildCovarient();

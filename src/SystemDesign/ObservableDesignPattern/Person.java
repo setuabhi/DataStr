@@ -1,6 +1,6 @@
 package SystemDesign.ObservableDesignPattern;
 
-public class Person implements Subscriber{
+public class Person implements Subscriber {
     private String name;
 
     public Person(String name) {

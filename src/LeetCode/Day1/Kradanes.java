@@ -9,14 +9,14 @@ package LeetCode.Day1;
  */
 public class Kradanes {
     public static void main(String[] args) {
-        int[] arr =  {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int[] arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         System.out.println(maxSumN2(arr));
         System.out.println(kradanes(arr));
     }
 
     private static int maxSumN2(int[] arr) {
         int MaxSum = Integer.MIN_VALUE;
-        int currentSum , startIndexOfMaxSubArray = -1, endIndexOfMaxSubArray = -1;
+        int currentSum, startIndexOfMaxSubArray = -1, endIndexOfMaxSubArray = -1;
         for (int i = 0; i < arr.length; i++) {
             currentSum = 0;
             for (int j = i; j < arr.length; j++) {
@@ -36,12 +36,12 @@ public class Kradanes {
     private static int kradanes(int[] arr) {
         int maxSum = Integer.MIN_VALUE;
         int currentSum = 0, startIndexOfMaxSubArray = -1, endIndexOfMaxSubArray = -1;
-        int tempStartIndex=0;
+        int tempStartIndex = 0;
         for (int i = 0; i < arr.length; i++) {
             currentSum += arr[i];
             if (currentSum > maxSum) {
                 maxSum = currentSum;
-                startIndexOfMaxSubArray=tempStartIndex;
+                startIndexOfMaxSubArray = tempStartIndex;
                 endIndexOfMaxSubArray = i;
             }
             if (currentSum < 0) {

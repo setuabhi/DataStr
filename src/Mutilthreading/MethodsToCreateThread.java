@@ -1,14 +1,6 @@
 package Mutilthreading;
 
-public class MethodsToCreateThread implements Runnable{
-    @Override
-    public void run() {
-        int i=10;
-        while(--i > 0) {
-            System.out.println("Doing task from " + Thread.currentThread().getName());
-        }
-    }
-
+public class MethodsToCreateThread implements Runnable {
     public static void main(String[] args) {
         Thread t1 = new Thread(new MethodsToCreateThread());
         t1.start();
@@ -19,8 +11,8 @@ public class MethodsToCreateThread implements Runnable{
         Thread.ofVirtual().start(t2);
 
         Thread t3 = new Thread(() -> { //Doing implements Runnable only
-            int i=10;
-            while(--i > 0) {
+            int i = 10;
+            while (--i > 0) {
                 System.out.println("Doing task from " + Thread.currentThread().getName());
             }
         });
@@ -33,12 +25,20 @@ public class MethodsToCreateThread implements Runnable{
             }
         });
 
-        int i=10;
-        while(--i > 0) {
+        int i = 10;
+        while (--i > 0) {
             System.out.println("Doing task from " + Thread.currentThread().getName());
         }
 
 
-}
+    }
+
+    @Override
+    public void run() {
+        int i = 10;
+        while (--i > 0) {
+            System.out.println("Doing task from " + Thread.currentThread().getName());
+        }
+    }
 
 }

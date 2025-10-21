@@ -7,17 +7,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class GroupByPartitionBy
-{
+public class GroupByPartitionBy {
     public static void main(String[] args) {
         List<Employee> arrL = new ArrayList<>();
-        arrL.add(new Employee("Abhiav","20"));
+        arrL.add(new Employee("Abhiav", "20"));
 
-        Map<String,List<Employee>> employeeGroupedByAge = arrL.stream().
+        Map<String, List<Employee>> employeeGroupedByAge = arrL.stream().
                 collect(Collectors.groupingBy(Employee::getAge));
 
         // true will be senior list and false will be junior List
-        Map<Boolean,List<Employee>> seniorJunior = arrL.stream().
-                collect(Collectors.partitioningBy(e->Integer.parseInt(e.getAge())>30));
+        Map<Boolean, List<Employee>> seniorJunior = arrL.stream().
+                collect(Collectors.partitioningBy(e -> Integer.parseInt(e.getAge()) > 30));
     }
 }

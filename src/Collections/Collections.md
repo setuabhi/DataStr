@@ -1,10 +1,13 @@
-Hashset.add returns true if new element being added else return false 
+1. Hashset.add returns true if new element being added else return false
 
-Hashmap.put returns null if new element being added else return value for that key
+2. Hashmap.put returns null if new element being added else return value for that key  
+2.1 map.values() : List of Values 
+2.2 map.keySet() : Set of Keys
+2.3 map.entrySet() gives you all the key-value pairs as a set of type Set<Map.Entry<Integer, Integer>>
 
-Both Hashmap and hashset works on O(1) for their add/put and get Methods
+3. Both Hashmap and hashset works on O(1) for their add/put and get Methods
 
-Multi value map to store duplicate key (com.google.common.collect):
+4. Multi value map to store duplicate key (com.google.common.collect):
 
     Multimap<String, String> multimap = ArrayListMultimap.create();
     multimap.put("key1", "value1");
@@ -12,19 +15,21 @@ Multi value map to store duplicate key (com.google.common.collect):
     multimap.put("key2", "value3");
     System.out.println(multimap.get("key1"));  // Outputs: [value1, value2]
 
-Concurrent collections, such as ConcurrentHashMap, CopyOnWriteArrayList, and ConcurrentLinkedQueue, 
-are designed for high concurrency and allow safe operations across multiple threads without the need for 
+5. Concurrent collections, such as ConcurrentHashMap, CopyOnWriteArrayList, and ConcurrentLinkedQueue,
+are designed for high concurrency and allow safe operations across multiple threads without the need for
 external synchronization. They are FailSafe in iterator
 
-hashMap iterate: 
+6. hashMap iterate:
 
-    1. Iterator<Map.entry<String,String> itrtr = hm.entrySet.iterator(); itrtr.next.getKey() and itrtr.next.getvalue()
-    2.         tm.forEach((key, value) -> {
+    1. for (Map.Entry<Integer, Integer> entry : hm.entrySet()) {
+
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    2.  JAVA8:    tm.forEach((key, value) -> {
             System.out.println(key+ value);
         });
 
-
-Collection hierarchy : 
+7. Collection hierarchy :
 
     java.lang.Iterable (interface)
     ↑
@@ -55,15 +60,13 @@ Collection hierarchy :
     ├── TreeMap (implements NavigableMap)
     └── Hashtable
 
-
-
-Queue:
+8. Queue:
 
     Use offer insead of add to avoid exception on gettting full --Add
     Use poll instead of remove to avoid exception if empty --Remove and return
     Use peek to access fist element, if no element then no exception will be thrown -- get first element
 
-Stack:
+9. Stack:
 
     Use push --Add
     use pop --Remove and return
@@ -71,26 +74,26 @@ Stack:
     use search -- get index of searched element 
     except search all throws exception
 
-Dequeue: 
+10. Dequeue:
 
     It has all functions of stack and queue like push pop peek offer poll except search
     Useful one: offer/ pool/ peek / peekFirst / peekLast / pollFirst / pollLast / size
                 first and last means inserted first or inserted last
 
-Heap:
+11. Heap:
 
     By default store in increasing order, method: offer/ poll/ peek
-    
-Time complexity of Queue Stack and DEQUEUE are O(1) 
 
-LinkedList: 
+12. Time complexity of Queue Stack and DEQUEUE are O(1)
+
+13. LinkedList:
 
     head = 3->2->1
     temp = 10->0
     head.next=temp  : head= 3->10->0
     temp=temp.next : head= 3->10->0 and temp = 0 (will not change head structure sinc they are only varaibles)
 
-TreeMap & TreeSet (Uses Red Black Tree): Use where you need sorted unique element, else go for heap  
+14. TreeMap & TreeSet (Uses Red Black Tree): Use where you need sorted unique element, else go for heap
 
     TreeSet: [10, 20, 30, 40]
         first(): first elelemt
@@ -103,3 +106,7 @@ TreeMap & TreeSet (Uses Red Black Tree): Use where you need sorted unique elemen
         lower(20): greatest element < 20, or null= 10
 
     TreeMap : firstKey() , firstEntry(), pollFirstEntry(), pollLastEntry(), ceilingEntry(20), ceilingKey(20) .. same for floor/higher/lower
+
+15. Integer[] arr = {-1, -3, 3, -2, 4, 5, -1, 0};
+    Arrays.sort(arr, (a, b) -> b - a) to sort in descending order, if it's primitive then : Arrays.sort(arr, Collections.reverseOrder());
+    Same goes for list

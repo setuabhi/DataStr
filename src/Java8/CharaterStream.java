@@ -7,10 +7,10 @@ import java.util.stream.IntStream;
 public class CharaterStream {
     public static void main(String[] args) {
         // Primitive char array
-        char[] arr = {'a','b','c'};
+        char[] arr = {'a', 'b', 'c'};
 
         // Non-primitive Character array
-        Character[] arrNonPrimitive = {'a','b','c'};
+        Character[] arrNonPrimitive = {'a', 'b', 'c'};
 
         // String
         String S = "Abhinav";
@@ -29,7 +29,7 @@ public class CharaterStream {
         // ✅ String.chars() exists and returns IntStream (Unicode code points)
         // Must cast each int to char
         List<Character> list2 = S.chars()
-                .mapToObj(c -> (char)c)
+                .mapToObj(c -> (char) c)
                 .toList();
 
         // Printing results

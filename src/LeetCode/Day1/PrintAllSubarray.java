@@ -1,5 +1,7 @@
 package LeetCode.Day1;
 
+import java.util.Arrays;
+
 public class PrintAllSubarray {
     public static void main(String[] args) {
         int[] arr = {-1, -3, 3, -2, 4, 5, -1, 0};

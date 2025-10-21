@@ -3,7 +3,7 @@ package Corejava;
 import java.util.Objects;
 
 public record Emplyee(String id, String name) {
-//Note below will be done by compiler
+    //Note below will be done by compiler
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
