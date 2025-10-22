@@ -64,6 +64,8 @@ Day 8 – Hash Maps
     30. Group Anagrams (LC 49, Medium)
     31. Top K Frequent Elements (LC 347, Medium)
     32. Subarray Sum Equals K (LC 560, Medium)
+    33. LRU Cache
+    34. HashMap/HashSet Internal Implementation read from Copy
 
 Day 9 – Linked List Basics
 
@@ -92,6 +94,7 @@ Day 12 – Queue
     46. Implement Stack using Queues (LC 225)
     47. Number of Recent Calls (LC 933)
     48. Rotting Oranges (LC 994, Medium, BFS)
+    49. kth largest element
 
 Day 13 – Heap / Priority Queue
 

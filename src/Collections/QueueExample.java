@@ -6,10 +6,10 @@ import java.util.concurrent.ArrayBlockingQueue;
 
 public class QueueExample {
     public static void main(String[] args) {
-        Queue queue = new LinkedList<>();
+        Queue<String> queue = new LinkedList<>();
         Queue<String> queueWithFixedSize = new ArrayBlockingQueue<>(3);
         // Adding elements
-
+        queue.offer("John");
 
         System.out.println("Queue: " + queue);
 
@@ -19,7 +19,7 @@ public class QueueExample {
         System.out.println("Queue after poll: " + queue);
 
         // Removing element (exception if empty)
-        System.out.println("Remove: " + queue.remove()); // Removes Emma and print it
+        System.out.println("Remove: " + queue.remove("John")); // Removes Emma and print it
         System.out.println("Queue after remove: " + queue);
     }
 

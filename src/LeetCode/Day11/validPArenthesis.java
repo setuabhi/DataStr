@@ -1,4 +1,4 @@
-package Collections;
+package LeetCode.Day11;
 
 import java.util.Stack;
 

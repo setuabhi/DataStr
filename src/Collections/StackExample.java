@@ -8,7 +8,6 @@ public class StackExample {
 
 
         System.out.println("Stack: " + stack);
-
         // Accessing elements
         System.out.println("Peek: " + stack.peek());   // 30
         System.out.println("Pop: " + stack.pop());     // Removes and return 30

@@ -1,4 +1,4 @@
-package Collections;
+package LeetCode.Day12;
 
 import java.util.PriorityQueue;
 

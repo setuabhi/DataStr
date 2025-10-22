@@ -10,34 +10,19 @@ public class MergeAndReverse {
         LinkedList head = new LinkedList(2);
         head.next = l2;
         l2.next = ll;
+
         LinkedList ll1 = new LinkedList(7);
         LinkedList l21 = new LinkedList(5);
         LinkedList head1 = new LinkedList(3);
         head1.next = l21;
         l21.next = ll1;
-        //  reverseListUsingStack(head);
-        //   LinkedList output = reverseListUsingRecursion(head);
-        LinkedList output1 = mergeTwoLists(head, head1);
-        reverseListUsingStack(head);
-
-    }
-
-    public static void reverseListUsingStack(LinkedList head) {
-        Stack<Integer> store = new Stack<>();
-        LinkedList temp = head;
-        while (temp != null) {
-            store.push(temp.val);
-            temp = temp.next;
-        }
-        temp = head;
-        while (temp != null) {
-            temp.val = store.pop(); // this changed head data too since temp is pointing to head address
-            temp = temp.next;
-        }
+        LinkedList reverseList= reverseList(head);
+        LinkedList mergedTwoLists = mergeTwoLists(head, head1);
         System.out.println("HI");
     }
 
-    public static LinkedList reverseListWithoutStack(LinkedList head) {
+
+    public static LinkedList reverseList(LinkedList head) {
         LinkedList prev = null;
         LinkedList next = null;
         while (head != null) {
@@ -50,21 +35,6 @@ public class MergeAndReverse {
         return prev;
     }
 
-    public static LinkedList reverseListUsingRecursion(LinkedList head) {
-
-        if (head == null || head.next == null) {
-            return head;
-        }
-
-
-        LinkedList newHead = reverseListUsingRecursion(head.next);
-
-        // Reverse the link
-        head.next.next = head;
-        head.next = null;
-
-        return newHead;
-    }
 
     public static LinkedList mergeTwoLists(LinkedList list1, LinkedList list2) {
 

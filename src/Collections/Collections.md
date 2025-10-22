@@ -21,13 +21,20 @@ external synchronization. They are FailSafe in iterator
 
 6. hashMap iterate:
 
-    1. for (Map.Entry<Integer, Integer> entry : hm.entrySet()) {
+    1. entrySet:
+        for (Map.Entry<Integer, Integer> entry : hm.entrySet()) {
 
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
-    2.  JAVA8:    tm.forEach((key, value) -> {
+    2.  JAVA8:    
+        tm.forEach((key, value) -> {
             System.out.println(key+ value);
         });
+   3. Iterator: 
+      Iterator<Map.Entry<Integer, String>> iterator = map.entrySet().iterator();
+      while (iterator.hasNext()) {
+       System.out.println(iterator.next().getKey() + " " + iterator.next().getValue());
+      }
 
 7. Collection hierarchy :
 
@@ -64,17 +71,19 @@ external synchronization. They are FailSafe in iterator
 
     Use offer insead of add to avoid exception on gettting full --Add
     Use poll instead of remove to avoid exception if empty --Remove and return
+    Use remove if you want to remove any specific element
     Use peek to access fist element, if no element then no exception will be thrown -- get first element
 
 9. Stack:
 
     Use push --Add
     use pop --Remove and return
-    Use peek -- get first element without removing 
+    Use peek -- get first element without removing, it throws exception unlike Queue
+    Use remove if you want to remove any specific element
     use search -- get index of searched element 
     except search all throws exception
 
-10. Dequeue:
+10. Dequeue, don't use it in interview, use either stack or queue
 
     It has all functions of stack and queue like push pop peek offer poll except search
     Useful one: offer/ pool/ peek / peekFirst / peekLast / pollFirst / pollLast / size
@@ -96,16 +105,12 @@ external synchronization. They are FailSafe in iterator
 14. TreeMap & TreeSet (Uses Red Black Tree): Use where you need sorted unique element, else go for heap
 
     TreeSet: [10, 20, 30, 40]
-        first(): first elelemt
+        first(): first element
         last(): last element
         pollFirst(): remove and return first element
         pollLast(): remove and return last element
-        ceiling(20): least element ≥ 20, or null= 20
-        floor(20): greatest element <= 20, or null= 20
-        higher(20): least element > 20, or null, output= 30
-        lower(20): greatest element < 20, or null= 10
 
-    TreeMap : firstKey() , firstEntry(), pollFirstEntry(), pollLastEntry(), ceilingEntry(20), ceilingKey(20) .. same for floor/higher/lower
+    TreeMap : firstKey() , firstEntry(), pollFirstEntry(), pollLastEntry()
 
 15. Integer[] arr = {-1, -3, 3, -2, 4, 5, -1, 0};
     Arrays.sort(arr, (a, b) -> b - a) to sort in descending order, if it's primitive then : Arrays.sort(arr, Collections.reverseOrder());
