@@ -1,4 +1,4 @@
-package Collections.LinkedList;
+package LeetCode.Day9;
 
 public class LinkedList {
     int val;

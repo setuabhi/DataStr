@@ -69,6 +69,7 @@ Day 8 – Hash Maps
 
 Day 9 – Linked List Basics
 
+    33.0. Convert an array to a list
     33. Reverse Linked List (LC 206)
     34. Merge Two Sorted Lists (LC 21)
     35. Remove Nth Node From End (LC 19, Medium)

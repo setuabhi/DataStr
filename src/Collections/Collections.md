@@ -100,7 +100,7 @@ external synchronization. They are FailSafe in iterator
     head = 3->2->1
     temp = 10->0
     head.next=temp  : head= 3->10->0
-    temp=temp.next : head= 3->10->0 and temp = 0 (will not change head structure sinc they are only varaibles)
+    temp=temp.next : head= 3->10->0 and temp = 0 (will not change head structure since they are only variables)
 
 14. TreeMap & TreeSet (Uses Red Black Tree): Use where you need sorted unique element, else go for heap
 
