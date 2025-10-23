@@ -55,6 +55,7 @@ Day 7 – 2D Arrays / Matrices
     26. Spiral Matrix (LC 54, Medium)
     27. Transpose
     28. Rotate Image (LC 48, Medium)
+    28. Merge Intervals
 
 Week 2: Hashing, Linked Lists, Stack/Queue, Heaps, Binary Trees
 
@@ -95,7 +96,6 @@ Day 12 – Queue
     46. Implement Stack using Queues (LC 225)
     47. Number of Recent Calls (LC 933)
     48. Rotting Oranges (LC 994, Medium, BFS)
-    49. kth largest element
 
 Day 13 – Heap / Priority Queue
 
@@ -183,36 +183,30 @@ Day 24 – DP More
     95. Edit Distance (LC 72, Medium)
     96. Coin Change II (LC 518, Medium)
 
-Day 25 – Mixed Patterns
 
-    97. Sliding Window Maximum (LC 239, Medium)
-    98. Longest Palindromic Substring (LC 5, Medium)
-    99. Trapping Rain Water (LC 42, Medium, Two Pointers)
-    100. Merge Intervals (LC 56, Medium)
-
-Day 26 – Review Weak Areas
+Day 25 – Review Weak Areas
 
     Revisit your weakest topics and re-solve at least 4 problems from earlier days.
 
-Day 27 – Mixed Graph/Tree DP
+Day 26 – Mixed Graph/Tree DP
 
     101. Binary Tree Maximum Path Sum (LC 124, Medium, if skipped earlier)
     102. Word Ladder (LC 127, Medium BFS)
     103. All Paths From Source to Target (LC 797, Medium DFS)
     104. Decode Ways (LC 91, Medium DP)
 
-Day 28 – Trie & Strings
+Day 27 – Trie & Strings
 
     105. Implement Trie (LC 208, Medium)
     106. Add and Search Word (LC 211, Medium)
     107. Replace Words (LC 648, Medium)
     108. Longest Word in Dictionary (LC 720, Medium)
 
-Day 29 – Mock Interview Practice
+Day 28 – Mock Interview Practice
 
     109. Randomly pick 4 problems (1 each: array, string, tree, graph)
     110. Solve them under 1-hour timed conditions.
 
-Day 30 – Final Review
+Day 29 – Final Review
 
     111–120. Re-attempt the most missed/incorrect 10 problems from the entire month.
