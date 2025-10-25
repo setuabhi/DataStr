@@ -1,3 +1,4 @@
+0. In Lambda expression (()->System.out.println("Hello, World!")) means no parameter 
 1. In Java, a functional interface is an interface that contains exactly one abstract method. This single abstract
    method defines the functionality that can be implemented by a lambda expression
 2. Optional @FunctionalInterface Annotation: While not mandatory, the @FunctionalInterface annotation is often used to
