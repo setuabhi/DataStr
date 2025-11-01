@@ -4,7 +4,7 @@ import java.util.*;
 
 public class TopKFrequentElements {
     public static void main(String[] args) {
-        int[] nums = {1, 1, 1, 2, 2, 3};
+        int[] nums = {1, 1, 1, 2, 2, 3, 3, 3, 3};
         int k = 2;
         System.out.println(Arrays.toString(topKFrequent(nums, k))); // [2, 1]
     }
@@ -13,11 +13,11 @@ public class TopKFrequentElements {
         Map<Integer, Integer> hm = new HashMap<>();
         //Count frequency
         for (int a : nums) {
-            hm.put(a,hm.getOrDefault(a,0)+1);
+            hm.put(a, hm.getOrDefault(a, 0) + 1);
         }
         // Step 2: Sort by frequency (high to low)
         List<Map.Entry<Integer, Integer>> list = new ArrayList<>(hm.entrySet());
-        list.sort((a, b) -> b.getValue() - a.getValue()); // sort descending
+        list.sort(Comparator.comparing(a -> a.getValue(), Collections.reverseOrder())); // sort descending
 
         // Step 3: Take top K elements
         int[] result = new int[k];

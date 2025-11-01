@@ -69,7 +69,7 @@ external synchronization. They are FailSafe in iterator
 
 8. Queue:
 
-    Use offer insead of add to avoid exception on gettting full --Add
+    Use offer instead of add to avoid exception on getting full --Add
     Use poll instead of remove to avoid exception if empty --Remove and return
     Use remove if you want to remove any specific element
     Use peek to access fist element, if no element then no exception will be thrown -- get first element
@@ -86,7 +86,7 @@ external synchronization. They are FailSafe in iterator
 10. Dequeue, don't use it in interview, use either stack or queue
 
     It has all functions of stack and queue like push pop peek offer poll except search
-    Useful one: offer/ pool/ peek / peekFirst / peekLast / pollFirst / pollLast / size
+    Useful one: offer / pool / peek / peekFirst / peekLast / pollFirst / pollLast / size
                 first and last means inserted first or inserted last
 
 11. Heap:

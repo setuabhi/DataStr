@@ -11,7 +11,6 @@ public class Reduce {
 
         //Product of numbers without identity (doesn't always return a value )
         OptionalInt productOptional = Arrays.stream(arr).reduce((a, b) -> a * b);
-        if (productOptional.isPresent()) System.out.println(productOptional.getAsInt());
-
+        System.out.println(productOptional.getAsInt());
     }
 }

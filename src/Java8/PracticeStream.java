@@ -8,25 +8,29 @@ import java.util.stream.IntStream;
 
 public class PracticeStream {
     public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(5, 12, 15, 20, 8, 30); //return a list of even numbers greater than 10.
+        //return a list of even numbers greater than 10.
+        List<Integer> numbers = Arrays.asList(5, 12, 15, 20, 8, 30);
         List<Integer> output= numbers.stream().filter(a->a>10).filter(a->a%2==0).toList();
 
-        List<String> names = Arrays.asList("Abhinav", "Riya", "Siddharth"); //convert all names to uppercase and return a new list.
-        List<String> output2 = names.stream().map(a->a.toUpperCase()).toList();
+        //convert all names to uppercase and first 3 characters only and return a new list.
+        List<String> names = Arrays.asList("Abhinav", "Riya", "Siddharth");
+        List<String> output2 = names.stream().map(a->a.toUpperCase()).map(a->a.substring(1,3)).toList();
 
 
-        List<Integer> numbers2 = Arrays.asList(10, 20, 30, 40); //Find the sum of all numbers in a list using streams.
+        //Find the sum of all numbers in a list using streams.
+        List<Integer> numbers2 = Arrays.asList(10, 20, 30, 40);
         Optional<Integer> sum= numbers2.stream().reduce((a, b)->a+b);
         int sumWithoutReduce= numbers2.stream().mapToInt(a->a).sum();
         sum.ifPresent(a-> System.out.println(a+" "+sumWithoutReduce));
 
-        List<ComparatorExample> students = new ArrayList<>(); // sort them first by id and then by name.
+        // sort them first by id desc and then by name.
+        List<ComparatorExample> students = new ArrayList<>();
         students.add(new ComparatorExample(3, "Alice"));
         students.add(new ComparatorExample(1, "Bob"));
         students.add(new ComparatorExample(2, "Charlie"));
         students.add(new ComparatorExample(1, "Adam"));
         List<ComparatorExample> studentsSorted= students.stream().sorted(
-                Comparator.comparingInt(ComparatorExample::getId).thenComparing(ComparatorExample::getName)
+                Comparator.comparing(ComparatorExample::getId,Collections.reverseOrder()).thenComparing(ComparatorExample::getName)
         ).toList();
 
 
@@ -36,7 +40,7 @@ public class PracticeStream {
 
 
         List<Integer> numbers1 = Arrays.asList(5, 12, 12, 20, 30, 20, 25); //From a list of numbers, get the first 3 distinct numbers greater than 10.
-        List<Integer> first3GreaterThan10= numbers1.stream().filter(a->a>10).limit(3).toList();
+        List<Integer> first3GreaterThan10= numbers1.stream().distinct().filter(a->a>10).limit(3).toList();
 
 
         List<List<Integer>> listOfLists = Arrays.asList(
@@ -54,14 +58,8 @@ public class PracticeStream {
         numbersPeek.stream().peek(a-> System.out.println(a)).toList(); //peek wont work without terminal
 
         List<Integer> numbersLarge = IntStream.rangeClosed(1, 1000).boxed().toList(); //Compute the sum of a large list of integers using a parallel stream.
-       int outPut= numbersLarge.parallelStream().reduce(0,(a,b)->a+b);
+        int outPut= numbersLarge.parallelStream().reduce(0,(a,b)->a+b);
         System.out.println(outPut);
-
-
-
-
-
-
 
     }
 }

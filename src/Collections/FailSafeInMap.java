@@ -14,8 +14,9 @@ public class FailSafeInMap {
         map.put(2, "Banana");
         map.put(3, "Cherry");
         Iterator<Map.Entry<Integer, String>> iterator = map.entrySet().iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next().getKey() + " " + iterator.next().getKey());
+        while (iterator.hasNext()) { // hasNext() just check whether iterator.next() has data or not
+            Map.Entry<Integer, String> entry = iterator.next(); //.next() will point to first element for the first loop, then second element
+            System.out.println(entry.getKey() + " " + entry.getKey());
             map.put(4, "Date");  // No exception, changes may or may not be seen in iteration, will throw java.util.ConcurrentModificationException if hashmap used
         }
         System.out.println(map);

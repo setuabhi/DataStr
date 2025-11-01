@@ -14,7 +14,8 @@ public class FailSafeIteratorList {
         Iterator<String> iterator = list.iterator();
         while (iterator.hasNext()) // hasNext() just check whether iterator.next() has data or not
         {
-            System.out.println(iterator.next());
+            String s = iterator.next(); //.next() will point to first element for the first loop, then second element
+            System.out.println(s);
             list.add("W");  // No exception, changes won't reflect in current iteration, will throw java.util.ConcurrentModificationException if arraylist used
         }
 
