@@ -19,7 +19,7 @@
     head
     ↓
     [3] -> [10] -> [0] -> null
-                ↑
-                temp
+                    ↑
+                    temp
 
 2. Always use temp for traversing and dummy to be returned as output

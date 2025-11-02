@@ -81,7 +81,6 @@ Day 10 – Linked List Advanced
     37. Intersection of Two Linked Lists (LC 160)
     38. Linked List Cycle Detection (LC 141)
     39. Add Two Numbers (LC 2, Medium)
-    40. Flatten a Multilevel Linked List (LC 430, Medium)   
 
 Day 11 – Stack
 
@@ -101,8 +100,6 @@ Day 13 – Heap / Priority Queue
 
     49. Kth Largest Element in an Array (LC 215, Medium)
     50. Top K Frequent Words (LC 692, Medium)
-    51. Merge k Sorted Lists (LC 23, Hard → Use only min-heap intuition but still medium-level approach)
-    52. Find Median from Data Stream (LC 295, Medium)
 
 Day 14 – Binary Tree Basics
 

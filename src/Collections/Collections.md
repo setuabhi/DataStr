@@ -1,9 +1,11 @@
-1. Hashset.add returns true if new element being added else return false
+1. Hashset.add returns true if new element being added else return false.
+   1.0 remove returns true if element present else false
 
-2. Hashmap.put returns null if new element being added else return value for that key  
-2.1 map.values() : List of Values 
-2.2 map.keySet() : Set of Keys
-2.3 map.entrySet() gives you all the key-value pairs as a set of type Set<Map.Entry<Integer, Integer>>
+2. Hashmap.put returns null if new element being added else return value for that key
+   2.0 remove returns value for that key else returns null
+   2.1 map.values() : List of Values 
+   2.2 map.keySet() : Set of Keys
+   2.3 map.entrySet() gives you all the key-value pairs as a set of type Set<Map.Entry<Integer, Integer>>
 
 3. Both Hashmap and hashset works on O(1) for their add/put and get Methods
 

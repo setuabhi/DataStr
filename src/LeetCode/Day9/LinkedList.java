@@ -1,10 +1,10 @@
 package LeetCode.Day9;
 
 public class LinkedList {
-    int val;
-    LinkedList next;
+    public int val;
+    public LinkedList next;
 
-    LinkedList(int val) {
+    public LinkedList(int val) {
         this.val = val;
     }
 
