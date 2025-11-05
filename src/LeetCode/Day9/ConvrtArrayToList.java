@@ -11,12 +11,13 @@ public class ConvrtArrayToList {
     }
 
     private static LinkedList covtToList(int[] nums) {
-        LinkedList dummy = null;
+        LinkedList dummy = new LinkedList(-1);
+        LinkedList temp =dummy;
         for (int i = nums.length - 1; i >= 0; i--) {
-            LinkedList temp = new LinkedList(nums[i]);
-            temp.next = dummy;
-            dummy = temp;
+            LinkedList temp1 = new LinkedList(nums[i]);
+            temp.next = temp1;
+            temp = temp1;
         }
-        return dummy;
+        return dummy.next;
     }
 }

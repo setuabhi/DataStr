@@ -33,7 +33,7 @@ public class MergeAndReverse {
 
 
     public static LinkedList mergeTwoSortedLists(LinkedList head1, LinkedList head2) {
-        LinkedList dummy = new LinkedList(0);
+        LinkedList dummy = new LinkedList(-1);
         LinkedList temp=dummy;
         while (head1 != null && head2 != null) {
             if (head1.val < head2.val) {

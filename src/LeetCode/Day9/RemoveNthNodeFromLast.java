@@ -12,11 +12,11 @@ public class RemoveNthNodeFromLast {
         head.next = l2;
         l2.next = l1;
         l1.next = l0;
-        LinkedList output = removeNthFromEnd(head, 4); // will remove 4
+        LinkedList output = removeNthFromEnd(head, 2); // will remove 2
         System.out.println("Test");
     }
 
-    private static LinkedList removeNthFromEnd(LinkedList head, int index) {
+    private static LinkedList removeNthFromEnd(LinkedList head, int nthRow) {
         int count = 0;
         LinkedList temp = head;
         //Take node count
@@ -24,7 +24,7 @@ public class RemoveNthNodeFromLast {
             temp = temp.next;
             count++;
         }
-        int indexToBeRemoved = count - index; // one node before will be the value
+        int indexToBeRemoved = count - nthRow; // one node before will be the value
         if (indexToBeRemoved == 0) // head only we need to remove
             return head.next;
 
