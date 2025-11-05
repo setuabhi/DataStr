@@ -22,4 +22,4 @@
                     ↑
                     temp
 
-2. Always use temp for traversing and dummy to be returned as output
+2. Always use temp for traversing and dummy.next to be returned as output
