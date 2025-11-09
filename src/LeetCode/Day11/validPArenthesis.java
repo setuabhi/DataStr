@@ -4,19 +4,18 @@ import java.util.Stack;
 
 public class validPArenthesis {
     public static void main(String[] args) {
-        String s = "[({)}]";
+        String s = "[{}])";
         System.out.println(checkParenthsis(s));
     }
 
     private static boolean checkParenthsis(String s) {
         Stack<Character> stack = new Stack<>();
         Boolean output = true;
-        for (int i = 0; i < s.length(); i++) {
-            char current = s.charAt(i);
-            if (current == '[' || current == '{' || current == '(') {
-                stack.push(current);
+        for (char c : s.toCharArray()) {
+            if (c == '[' || c == '{' || c == '(') {
+                stack.push(c);
             } else {
-                return compareBoth(current, stack.pop()); // return here itself
+                output= compareBoth(c, !stack.isEmpty() ?stack.pop():' '); // to handle [{}])
             }
         }
         if (!stack.empty()) {
@@ -26,13 +25,8 @@ public class validPArenthesis {
     }
 
     private static Boolean compareBoth(char current, Character pop) {
-        if (pop == '{' && current == '}')
-            return true;
-        else if (pop == '(' && current == ')') {
-            return true;
-        } else if (pop == '[' && current == ']') {
-            return true;
-        } else
-            return false;
+        return (pop == '{' && current == '}') ||
+                (pop == '(' && current == ')') ||
+                (pop == '[' && current == ']');
     }
 }

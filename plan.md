@@ -86,8 +86,7 @@ Day 11 – Stack
 
     41. Valid Parentheses (LC 20)
     42. Min Stack (LC 155, Medium)
-    43. Next Greater Element I (LC 496)
-    44. Evaluate Reverse Polish Notation (LC 150, Medium)
+    44. Evaluate Reverse Polish Notation (LC 150, Medium) postfix to infix
 
 Day 12 – Queue
 

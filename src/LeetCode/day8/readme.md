@@ -7,7 +7,7 @@
    Arrays.sort(arrNonPrimitive, Collections.reverseOrder()); to sort in descending order, 
    if it's primitive then Collections.reverseOrder() won't work as it works on Object only: 
     int[] sortedDesc = Arrays.stream(arr)
-   .boxed()                                 // convert int → Integer
+   .boxed()                                 // convert IntStream → Stream<Integer>
    .sorted(Collections.reverseOrder())      // sort descending, work bcoz we converted it to  Stream<Integer>
    .mapToInt(Integer::intValue)             // back to int
    .toArray();

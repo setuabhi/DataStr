@@ -69,21 +69,20 @@ external synchronization. They are FailSafe in iterator
     ├── TreeMap (implements NavigableMap)
     └── Hashtable
 
-8. Queue:
+8. Queue ( exception comes in add() and remove() ):
 
-    Use offer instead of add to avoid exception on getting full --Add
-    Use poll instead of remove to avoid exception if empty --Remove and return
-    Use remove if you want to remove any specific element
-    Use peek to access fist element, if no element then no exception will be thrown -- get first element
+    Use offer instead of add to avoid exception on getting full, returns false if full, add() throws IllegalStateException if the queue is full.  --Add
+    Use poll() instead of remove() to avoid exception if empty, returns null if empty, no exception --Remove and return head
+    Use remove(x) if you want to remove specific element x, only remove() Remove and return head nad throws NoSuchElementException if the queue is empty.
+    Use peek() to access fist element without removing, if no element then no exception will be thrown, null will be returned -- get first element
 
-9. Stack:
+9. Stack ( exception comes in pop()  peek() and remove(x) ):
 
-    Use push --Add
-    use pop --Remove and return
-    Use peek -- get first element without removing, it throws exception unlike Queue
-    Use remove if you want to remove any specific element
-    use search -- get index of searched element 
-    except search all throws exception
+    Use push() --Add
+    use pop() --removes and returns the top element; throws EmptyStackException if empty, use if(!stack.empty() check
+    Use peek() -- get first element without removing, throws EmptyStackException if empty, use if(!stack.empty() check
+    Use remove(x) if you want to remove any specific element, here we don't have remove() to remove head
+    use search(x) -- get index of searched element in pop() order, starts from 1,2,3,4 return -1 if not present
 
 10. Dequeue, don't use it in interview, use either stack or queue
 
@@ -114,6 +113,11 @@ external synchronization. They are FailSafe in iterator
 
     TreeMap : firstKey() , firstEntry(), pollFirstEntry(), pollLastEntry()
 
-15. Integer[] arr = {-1, -3, 3, -2, 4, 5, -1, 0};
-    Arrays.sort(arr, (a, b) -> b - a) to sort in descending order, if it's primitive then : Arrays.sort(arr, Collections.reverseOrder());
-    Same goes for list
+15. Integer[] arrNonPrimitive = {-1, -3, 3, -2, 4, 5, -1, 0};
+    Arrays.sort(arrNonPrimitive, Collections.reverseOrder()); to sort in descending order,
+    if it's primitive then Collections.reverseOrder() won't work as it works on Object only:
+    int[] sortedDesc = Arrays.stream(arr)
+    .boxed()                                 // convert IntStream → Stream<Integer>
+    .sorted(Collections.reverseOrder())      // sort descending, work bcoz we converted it to  Stream<Integer>
+    .mapToInt(Integer::intValue)             // back to int
+    .toArray();
