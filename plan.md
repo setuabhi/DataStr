@@ -119,7 +119,7 @@ Day 16 – Tree Traversals
 
     61. Binary Tree Level Order Traversal (LC 102)
     62. Binary Tree Zigzag Level Order (LC 103, Medium)
-    63. Diameter of Binary Tree (LC 543, Medium)
+    63. Binary Tree in/pre/post Order Traversal (DFS traversal)
     64. Maximum Path Sum (LC 124, Medium)
 
 Day 17 – Graph BFS/DFS
