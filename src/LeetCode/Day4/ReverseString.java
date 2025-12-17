@@ -1,26 +1,36 @@
 package LeetCode.Day4;
 
+import java.util.Arrays;
+
 public class ReverseString {
     public static void main(String[] args) {
-        String S = "abhinav";
-        System.out.println(reverseItUsingBuffer(S));
+        String S = "ab srivas";
         System.out.println(reverseItUsingCharArray(S));
+        System.out.println(reverseWord(S));
+    }
+
+    private static String reverseWord(String s) {
+        String[] str = s.split(" ");
+        String output = "";
+        for (int j = str.length-1; j >=0; j--) {
+            output = output + str[j] + " ";
+        }
+        return output.trim();
     }
 
     private static String reverseItUsingCharArray(String s) {
-        char[] array = s.toCharArray();
-        int start = 0, end = s.length() - 1;
-        while (end > start) {
-            char temp = array[start];
-            array[start++] = array[end];
-            array[end--] = temp;
+        String[] str = s.split(" ");
+        for (int i = 0; i < str.length; i++) {
+            String output = "";
+            for (int j = str[i].length()-1; j >=0; j--) {
+                output= output+str[i].charAt(j);
+            }
+            str[i]=output;
         }
-
-        return new String(array);
+        return String.join(" ",str);
     }
 
     private static String reverseItUsingBuffer(String s) {
-        StringBuilder sb = new StringBuilder(s);
-        return sb.reverse().toString();
+        return null;
     }
 }

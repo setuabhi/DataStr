@@ -10,7 +10,7 @@ public class Reduce {
         int product = Arrays.stream(arr).reduce(1, (a, b) -> a * b);
 
         //Product of numbers without identity (doesn't always return a value )
-        OptionalInt productOptional = Arrays.stream(arr).reduce((a, b) -> a * b);
-        System.out.println(productOptional.getAsInt());
+        Integer productOptional = Arrays.stream(arr).reduce((a, b) -> a * b).orElse(0);
+        System.out.println(productOptional);
     }
 }
