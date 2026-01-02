@@ -11,11 +11,10 @@ public class ValidPalindrome {
     }
 
     private static boolean checkIt(String s) {
-        int left = 0, right = s.length() - 1;
+        String newSting =s.replaceAll("\\s", "");
+        int left = 0, right = newSting.length() - 1;
         while (left < right) {
-            while (left < right && !Character.isAlphabetic(s.charAt(right))) right--;
-            while (left < right && !Character.isAlphabetic(s.charAt(left))) left++;
-            if (s.charAt(right) != s.charAt(left)) return false;
+            if (newSting.charAt(right) != newSting.charAt(left)) return false;
             left++;
             right--;
         }

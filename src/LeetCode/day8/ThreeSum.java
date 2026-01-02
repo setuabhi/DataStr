@@ -1,6 +1,6 @@
-package LeetCode.Day5;
+package LeetCode.day8;
 
-import java.util.*;
+import java.util.HashMap;
 
 /**
  * initialize hashmap in inner loop

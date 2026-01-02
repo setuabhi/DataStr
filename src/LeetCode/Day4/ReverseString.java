@@ -12,7 +12,7 @@ public class ReverseString {
     private static String reverseWord(String s) {
         String[] str = s.split(" ");
         String output = "";
-        for (int j = str.length-1; j >=0; j--) {
+        for (int j = str.length - 1; j >= 0; j--) {
             output = output + str[j] + " ";
         }
         return output.trim();
@@ -22,15 +22,11 @@ public class ReverseString {
         String[] str = s.split(" ");
         for (int i = 0; i < str.length; i++) {
             String output = "";
-            for (int j = str[i].length()-1; j >=0; j--) {
-                output= output+str[i].charAt(j);
+            for (int j = str[i].length() - 1; j >= 0; j--) {
+                output = output + str[i].charAt(j);
             }
-            str[i]=output;
+            str[i] = output;
         }
-        return String.join(" ",str);
-    }
-
-    private static String reverseItUsingBuffer(String s) {
-        return null;
+        return String.join(" ", str);
     }
 }

@@ -61,7 +61,7 @@ Week 2: Hashing, Linked Lists, Stack/Queue, Heaps, Binary Trees
 
 Day 8 – Hash Maps
 
-    29. Two Sum (hashmap approach, LC 1)
+    29. Two Sum and three sum (hashmap approach, LC 1)
     30. Group Anagrams (LC 49, Medium)
     31. Top K Frequent Elements (LC 347, Medium)
     32. Subarray Sum Equals K (LC 560, Medium)

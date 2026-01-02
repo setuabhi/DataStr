@@ -1,4 +1,5 @@
-1. There are 128 charaters, Ascii lies between 0 to 255, 0=null, 32=space , 33-126 keyboard charaters and 127=del
+1. There are 128 charaters, Ascii lies between 0 to 255, 0=null, 32=space , 
+   33-126 keyboard characters (Uppercase letters (A–Z) → 65 to 90,Lowercase letters (a–z) → 97 to 122) and 127=del
    int ascii= 'c'
 2. arr['c']=52 means at index=ascii of c, 52 will be stored in arr
 3. hashMap.getOrDefault(c,0) -> return 0 it's values
@@ -11,3 +12,7 @@
       string sorted = new String(chars);
    c. String output=""; for(int i = s.length() - 1; i >= 0; i--) rev += s.charAt(i);
 7. trim to remove leading and trailing space
+8. if we have only Alphabets Characters then go with approach:
+   s1Data = new s1Data[52];
+   for(char c: stringInput)
+   s1Data[c - 'A']++; // [c - 'A'] will always lie between 0 to 51
