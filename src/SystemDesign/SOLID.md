@@ -1,16 +1,16 @@
 **Single Responsibility Principle (SRP)**
 
-    A class should have only one reason to change; a service class should have only similar type of features
+    A class should have only one reason to change;
+    Pojo shouldn't have service methods, a service class should have only similar type of features
 
 ***Java Code***
 
-    // Violation of SRP
+    // Violation of SRP (Contains POJO, different Service features together(
         class Invoice {
-            public void calculateTotal() {
-            // Logic for total calculation
-            }
-    
-    
+         private Date createdDate;
+         void setCreatedDate(Date createdDate) this.createdDate=createdDate;
+         Date getCreatedDate() return this.createdDate=createdDate;
+
             public void printInvoice() {
             // Logic for printing the invoice
             }
@@ -26,9 +26,9 @@
     
     // Applying SRP
         class Invoice {
-            public void calculateTotal() {
-            // Logic for total calculation
-            }
+         private Date createdDate;
+         void setCreatedDate(Date createdDate) this.createdDate=createdDate;
+         Date getCreatedDate() return this.createdDate=createdDate;
         }
             
         class InvoicePrinter {
@@ -50,108 +50,105 @@
 **Open/Closed Principle (OCP)**
 
     A class should be open for extension but closed for modification.
+    Do't modify existing code, extend existing code
 
 **Java Code**
 
     // Violation of OCP
-        class DiscountService {
-            public double applyDiscount(String type, double amount) {
-            if ("FESTIVAL".equals(type)) {
-            return amount * 0.9; // 10% off
-            } else if ("SEASONAL".equals(type)) {
-            return amount * 0.8; // 20% off
-            }
-             throw new RuntimeException("Discount can't be applied");
-            }
+    public class NotificationServiceBeforeOCP {
+      public void sendNotification(String type) {
+        if (type.equals("Email")) {
+            System.out.println("Sending email notification...");
+        } else if (type.equals("SMS")) {
+            System.out.println("Sending SMS notification...");
         }
+        else if(type.equals("OTP"))
+        {
+            System.out.println("Sending OTP notification...");
+        }
+        else if(type.equals("CALLOTP"))
+        {
+            throw new RuntimeException("Wrong type");
+        }
+         else 
+       }
+      }
     
     // Applying OCP
-        interface Discount {
-            double apply(double amount);
-        }
+        interface Notification {
+            void send();
+         }
     
-        class FestivalDiscount implements Discount {
-            public double apply(double amount) {
-            return amount * 0.9; // 10% off
-            }
-        }
-    
-        class SeasonalDiscount implements Discount {
-            public double apply(double amount) {
-            return amount * 0.8; // 20% off
-            }
-        }
-        
-        class DiscountService {
-            public double applyDiscount(Discount discount, double amount) {
-            return discount.apply(amount);
-            }
-        }
+        class EmailNotificatiom implements Notification {
+            public void send() {System.out.println("Sending email notification...");}
+         }
+
+        class SMSNotification implements Notification {
+            public void send() {System.out.println("Sending sms notification...");}
+         }
+
+        class NotificationServiceAfterOCP {
+            public void sendNotification(Notification notification) {notification.send();}
+         }
+
 
     //Main Class
 
-    public class DiscountApplication {
+    public class NotificationApplication {
         public static void main(String[] args) {
-        DiscountService discountService = new DiscountService();
+        NotificationServiceAfterOCP notificationServiceAfterOCP = new NotificationServiceAfterOCP();
 
-        // Use SeasonalDiscount
-        Discount seasonalDiscount = new SeasonalDiscount();
-        double originalAmount = 1000.0;
-        double discountedAmount = discountService.applyDiscount(seasonalDiscount, originalAmount);
-
-        System.out.println("Original Amount: $" + originalAmount);
-        System.out.println("Discounted Amount (Seasonal): $" + discountedAmount);
+        // Send SMS Notification
+        notificationServiceAfterOCP.sendNotification(new SMSNotification());
         }
     }
 
 **Liskov Substitution Principle (LSP)**
 
-    Derived classes should be substitutable for their base classes, i.e. each methods in parent class should be substitutable by their Child class
+    Derived classes should be substitutable for their base classes, i.e. each methods in parent class should be substitutable by their Child class, else put in interface
 
 **Java Code**
 
     // Violation of LSP
-    class Bird {
-        public void fly() {
-        System.out.println("Flying...");
-        }
-        void eat(){
-        System.out.println("Eating...");
-        }
+    Abstract class BirdWithoutLSP {
+         public void fly() { System.out.println("Flying...");}
+         void eat(){ System.out.println("Eating..."); }
     }
     
     class Penguin extends Bird {
-        //LSV fails as fly method is not substitutable
+         @Override
+         public void fly() { throw new UnsupportedOperationException("Penguins can't fly"); }
+         @Override
+         public void eat() { System.out.println("Penguin Eating..."); }
     }
     
     // Applying LSP
-    interface Bird {
-     void eat();
+    Abstract class BirdWithLSP {
+         void eat(){ System.out.println("Eating..."); } // Only Subtituttable method present
     }
     
-    interface FlyingBird extends Bird {
+    interface FlyingBird{
         void fly();
     }
-    
-    class Sparrow implements FlyingBird {
-        public void eat() {
-        System.out.println("Sparrow eating...");
-        }
-        
-        public void fly() {
-            System.out.println("Sparrow flying...");
-        }
+
+    interface NonFlyingBird{
+        void walk();
     }
     
-    class Penguin implements Bird {
-        public void eat() {
-        System.out.println("Penguin eating...");
-        }
+    class Sparrow implements FlyingBird extends BirdWithLSP {
+        public void eat() { System.out.println("Sparrow eating..."); }
+
+        public void fly() { System.out.println("Sparrow flying..."); }
+    }
+    
+    class Penguin implements NonFlyingBird extends BirdWithLSP {
+        public void eat() { System.out.println("Penguin eating..."); }
+        public void walk() { System.out.println("Penguin walking..."); }
     }
 
 **Interface Segregation Principle (ISP)**
 
-    Clients should not be forced to depend on interfaces they do not use, Interface class should have least generic methods to override. while in Liscov we don't force as it was a class but there also all methods should be substitutable 
+    Clients should not be forced to depend on interfaces they do not use, Interface class should have least generic methods to override. 
 
 **Java Code**
 
@@ -172,7 +169,7 @@
     }
     
     // Applying ISP while in LSV one interface is dependent on other, he we splitted completly
-    interface Workable {
+    interface Worker {
         void work();
     }
     
@@ -180,7 +177,7 @@
         void eat();
     }
     
-    class Human implements Workable, Eatable {
+    class Human implements Worker, Eatable {
         public void work() {
         System.out.println("Human working...");
         }
@@ -190,7 +187,7 @@
         }
     }
     0
-    class Robot implements Workable {
+    class Robot implements Worker {
         public void work() {
         System.out.println("Robot working...");
         }
@@ -198,29 +195,25 @@
 
 **Dependency Inversion Principle (DIP)**
 
-    High-level modules should not depend on low-level modules. Both should depend on abstractions (e.g., interfaces).
+    High-level modules should not depend on low-level modules. Both should depend on interfaces
 
 **Java Code Without DIP**
 
-    class Keyboard {
-        public void type() {
-        System.out.println("Typing on keyboard...");
-        }
+    class Keyboard { //low level module
+         public void type() { System.out.println("Typing on keyboard..."); }
     }
     
-    class Monitor {
-        public void display(String message) {
-        System.out.println("Displaying: " + message);
-        }
+    class Monitor { //low level module
+         public void display(String message) { System.out.println("Displaying: " + message); }
     }
     
-    class Computer {
-        private Keyboard keyboard;
-        private Monitor monitor;
+    class Computer { //high level module
+        private Keyboard keyboard; // Direct dependency
+        private Monitor monitor; // Direct dependency
         
-            public Computer() {
-                this.keyboard = new Keyboard(); // Direct dependency
-                this.monitor = new Monitor();   // Direct dependency
+            public Computer(Keyboard keyboard,Monitor monitor) {
+                this.keyboard = keyboard; 
+                this.monitor = monitor; 
             }
         
             public void start() {
@@ -231,7 +224,9 @@
     
     public class Main {
         public static void main(String[] args) {
-        Computer computer = new Computer();
+        Keyboard keyboard = new Keyboard();
+        Monitor monitor = new Monitor();
+        Computer computer = new Computer(keyboard,monitor);
         computer.start();
         }
     }
@@ -253,24 +248,20 @@ Problems:
     }
 
     class Keyboard implements InputDevice {
-        public void type() {
-        System.out.println("Typing on keyboard...");
-        }
+        public void type() { System.out.println("Typing on keyboard..."); }
     }
     
     class Monitor implements OutputDevice {
-        public void display(String message) {
-        System.out.println("Displaying: " + message);
-        }
+        public void display(String message) { System.out.println("Displaying: " + message); }
     }
 
     class Computer {
-        private InputDevice inputDevice;
-        private OutputDevice outputDevice;
+        private InputDevice inputDevice; // No Direct dependency
+        private OutputDevice outputDevice; // No Direct dependency
         
             public Computer(InputDevice inputDevice, OutputDevice outputDevice) {
-                this.inputDevice = inputDevice; // Depends on abstractions, not concrete classes
-                this.outputDevice = outputDevice; // Depends on abstractions, not concrete classes
+                this.inputDevice = inputDevice;
+                this.outputDevice = outputDevice;
             }
         
             public void start() {
@@ -289,9 +280,4 @@ Problems:
         }
     }
 
-**Summary**
-
-    Only for S the solution is create new classes 
-    for O, I and D solution is use interface instead of class
-    and for L = split Interfaces to least generic
 

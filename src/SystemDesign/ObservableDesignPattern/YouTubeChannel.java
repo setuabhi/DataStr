@@ -25,7 +25,7 @@ public class YouTubeChannel {
     public void uploadVideo(String videoTitle) {
         System.out.println(channelName + " uploaded a new video: " + videoTitle);
         for (Subscriber subscriber : subscribers) {
-            subscriber.update(videoTitle); // Notify each subscriber
+            subscriber.notify(videoTitle); // Notify each subscriber
         }
     }
 }
