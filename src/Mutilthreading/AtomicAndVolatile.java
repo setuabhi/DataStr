@@ -3,8 +3,15 @@ package Mutilthreading;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicAndVolatile {
+    //volatile variable is always read from and written to main memory, not from thread-specific caches. This means changes made by one thread to a volatile variable are visible to other threads immediately, race condition can occur as it's not thread safe
     public volatile int count = 0;
     public AtomicInteger countAtomic = new AtomicInteger(0);
+    public void incrementAtomic() {
+        countAtomic.incrementAndGet(); // atomic operation
+    }
+    public void increment() {
+        count++;
+    }
 
     public static void main(String[] args) throws InterruptedException {
         AtomicAndVolatile atomicAndVolatile = new AtomicAndVolatile();
@@ -27,13 +34,5 @@ public class AtomicAndVolatile {
         t2.join(); //When you call t2.join() the main thread will wait for t2 to finish before continuing.
         System.out.println(atomicAndVolatile.count);
         System.out.println(atomicAndVolatile.countAtomic);
-    }
-
-    public void incrementAtomic() {
-        countAtomic.incrementAndGet(); // atomic operation
-    }
-
-    public void increment() {
-        count++;
     }
 }

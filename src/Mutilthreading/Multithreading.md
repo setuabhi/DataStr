@@ -7,7 +7,7 @@
    system resources, and execution environment with other threads in the same process.
    Executors are higher-level abstractions for managing threads in Java. Executors provide a way to manage a pool of
    threads and execute tasks concurrently.
-   We can create threads directly using new keyword or with the help of executer service
+   We can create threads directly using new keyword or with the help of executor service
 
 3. Extending the Thread class limits the subclass because it can't extend any other class,
    whereas Runnable is a functional interface and can be used with the Thread class or any other class.
@@ -122,6 +122,19 @@
         ❌ Concurrent updates on volatile variables are NOT atomic, leading to race conditions.
         ✅ Use AtomicInteger or synchronized if atomicity is required.
 
-9.**See virtual Thread example in ExecuterService and MethodsToCreateThread**
+9.**Normal (Platform) Thread:**
 
-10.**Use of join()**
+      Normal Java thread = 1 real OS thread
+      If the thread is blocked (DB call, API call, sleep, waiting):
+      👉 The OS thread is also blocked
+
+10.**Virtual Thread:**
+
+      Virtual thread ≠ OS thread, 
+      Virtual thread is managed by JVM, JVM runs virtual threads on few OS threads
+      If the virtual is blocked (DB call, API call, sleep, waiting):
+      👉 JVM pauses (parks) the virtual thread
+      👉 JVM frees the OS thread immediately
+      👉 OS thread runs some other virtual thread
+
+11.**Use of join()**

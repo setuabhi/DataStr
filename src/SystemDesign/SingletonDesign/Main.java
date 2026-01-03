@@ -2,7 +2,7 @@ package SystemDesign.SingletonDesign;
 
 public class Main {
     public static void main(String[] args) {
-        ThreadSafeLazy cache = ThreadSafeLazy.getInstance();
+        CacheManagerUsingSingleton cache = CacheManagerUsingSingleton.getInstance();
 
         // Store data in cache
         cache.put("user_1", "John Doe");

@@ -7,13 +7,14 @@ import java.util.concurrent.*;
 public class ExecuterService {
     public static void main(String[] args) {
         ExecuterService es = new ExecuterService();
-        ExecutorService executor = Executors.newFixedThreadPool(3);
-        ExecutorService executorUsingVirtualThread = Executors.newVirtualThreadPerTaskExecutor(); //No need to define pool size
+
+        ExecutorService executor = Executors.newFixedThreadPool(2); //We assigned two threads so, method3 will wait
+        ExecutorService executorUsingVirtualThread = Executors.newVirtualThreadPerTaskExecutor(); //No need to define pool size, all will execute together
 
         // Define tasks as Callable objects
-        Callable<List<Integer>> task1 = es::method1;
-        Callable<List<Integer>> task2 = es::method2;
-        Callable<List<Integer>> task3 = es::method3;
+        Callable<List<Integer>> task1 = ()->es.method1();
+        Callable<List<Integer>> task2 = ()->es.method2();;
+        Callable<List<Integer>> task3 = ()->es.method3();;
 
         try {
             // Submit tasks and get Future objects
@@ -25,54 +26,19 @@ public class ExecuterService {
             Future<List<Integer>> futureVirtual2 = executorUsingVirtualThread.submit(task2);
             Future<List<Integer>> futureVirtual3 = executorUsingVirtualThread.submit(task3);
 
-            // Retrieve results
-            List<Integer> result1 = future1.get();
-            List<Integer> result2 = future2.get();
-            List<Integer> result3 = future3.get();
 
-            // Retrieve results using virtual
-            List<Integer> resultVirtual1 = futureVirtual1.get();
-            List<Integer> resultVirtual2 = futureVirtual2.get();
-            List<Integer> resultVirtual3 = futureVirtual3.get();
+            System.out.println("Print results using 3 threads using executor service");
+            System.out.println("Result from method1: " + future1.get());
+            System.out.println("Result from method2: " + future2.get());
+            System.out.println("Result from method3: " + future3.get());
 
-            System.out.println("Print results using 3 threads using executer service");
-            System.out.println("Result from method1: " + result1);
-            System.out.println("Result from method2: " + result2);
-            System.out.println("Result from method3: " + result3);
+            Thread.sleep(5000);
 
-            Thread.sleep(4000);
+            System.out.println("Print results using 3 threads using executor service virtual thread");
+            System.out.println("Result from method1: " + futureVirtual1.get());
+            System.out.println("Result from method2: " + futureVirtual2.get());
+            System.out.println("Result from method3: " + futureVirtual3.get());
 
-            System.out.println("Print results using 3 threads using new Thread");
-            Thread t1 = new Thread(() -> {
-                try {
-                    System.out.println(es.method1());
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            });
-            Thread t2 = new Thread(() -> {
-                try {
-                    System.out.println(es.method2());
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            });
-            Thread t3 = new Thread(() -> {
-                try {
-                    System.out.println(es.method3());
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            });
-            t1.start();
-            t2.start();
-            t3.start();
-            Thread.sleep(4000);
-
-            System.out.println("Print results using single threads");
-            System.out.println(es.method1());
-            System.out.println(es.method2());
-            System.out.println(es.method3());
 
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
@@ -82,17 +48,17 @@ public class ExecuterService {
     }
 
     public List<Integer> method1() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         return Arrays.asList(1, 2, 3);
     }
 
     public List<Integer> method2() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         return Arrays.asList(4, 5, 6);
     }
 
     public List<Integer> method3() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         return Arrays.asList(7, 8, 9);
     }
 

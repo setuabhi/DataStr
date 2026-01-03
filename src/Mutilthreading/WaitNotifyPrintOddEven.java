@@ -5,7 +5,8 @@ package Mutilthreading;
  */
 
 public class WaitNotifyPrintOddEven {
-    volatile int x = 0;
+    //volatile variable is always read from and written to main memory, not from thread-specific caches. This means changes made by one thread to a volatile variable are visible to other threads immediately, race condition can occur as it's not thread safe
+    volatile int x = 1;
     int max;
 
     public WaitNotifyPrintOddEven(int max) {
@@ -36,35 +37,29 @@ public class WaitNotifyPrintOddEven {
 
     }
 
-    void printEven() throws InterruptedException {
-        while (x <= max) {
-            synchronized (this) {
-                if (x % 2 != 0) {
-                    System.out.println("Waiting for Odd Thread Notify");
-                    wait(); //Even thread will not move to next line until gets notify call
-                } else {
-                    System.out.println("Thead: " + Thread.currentThread().getName() + " " + x++);
-                    Thread.sleep(3000);
-                    System.out.println("Notified Odd Thread");
-                    notifyAll();
-                }
-
-            }
-        }
-    }
-
     void printOdd() throws InterruptedException {
         while (x <= max) {
             synchronized (this) {
                 if (x % 2 == 0) {
-                    System.out.println("Waiting for Even Thread Notify");
                     wait();
                 } else {
                     System.out.println("Thead: " + Thread.currentThread().getName() + " " + x++);
-                    Thread.sleep(5000);
-                    System.out.println("Notified Even Thread Thread");
                     notify();
                 }
+            }
+        }
+    }
+
+    void printEven() throws InterruptedException {
+        while (x <= max) {
+            synchronized (this) {
+                if (x % 2 != 0) {
+                    wait();
+                } else {
+                    System.out.println("Thead: " + Thread.currentThread().getName() + " " + x++);
+                    notify();
+                }
+
             }
         }
     }

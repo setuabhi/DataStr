@@ -1,55 +1,85 @@
 package Mutilthreading;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 /**
- * if t1 is accessing method1 using obj1 of SynchonizedExample then t2 can't access method2 and method3
- * But t2 can access method4 at the same time due to Object lock
+ * this → Your house key
+ * lock → Bedroom key
+ * Class → Apartment main gate
  */
 public class SynchonizedExample {
 
-    private final Object lock = new Object();
-
     public static void main(String[] args) {
         SynchonizedExample obj1 = new SynchonizedExample();
+        SynchonizedExample obj2 = new SynchonizedExample();
+        Thread t0 = new Thread(() -> obj1.method0(), "T0");
         Thread t1 = new Thread(() -> obj1.method1(), "T1");
         Thread t2 = new Thread(() -> obj1.method2(), "T2");
-        Thread t3 = new Thread(() -> obj1.method4(), "T3");
-//method4 and method1 can be accessed concurrently by multiple threads
-//but method1 and  method2 can't be can't be accessed by multiple thread together
+        Thread t3 = new Thread(() -> obj1.method3(), "T3");
+        Thread t4 = new Thread(() -> obj1.method4(), "T4");
+        Thread t5 = new Thread(() -> obj1.method4(), "T5");
+        t0.start();
         t1.start();
         t2.start();
         t3.start();
+        t4.start();
+        t5.start();
     }
 
-    public void method1() {
-        synchronized (this) {  // Lock current object,
+    public void method0() {
+        synchronized (this) {  // Lock current object only, if any T1 enters method1() on obj1 and T2 tries method1() on obj1, it will wait
             try {
+                System.out.println("method0 works! on"+ Thread.currentThread().getName()+ " " +LocalDateTime.now());
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println("method1 works!");
         }
     }
 
-    public synchronized void method2() {  // Locks `this`
+    public void method1() {
+        synchronized (this) {  // Lock current object only, if any T1 enters method1() on obj1 and T2 tries method1() on obj1, it will wait
+            try {
+                System.out.println("method1 works! on"+ Thread.currentThread().getName()+ " " +LocalDateTime.now());
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    /**
+     * Only this is method level synchronization, others are synchronized block
+     */
+    public synchronized void method2() {  // same as method1
         try {
-            Thread.sleep(2000);
+            System.out.println("method2 works! on"+ Thread.currentThread().getName()+ " " +LocalDateTime.now());
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("method2 works!");
     }
-
-    public void method4() {
-        synchronized (lock) {  // Lock current object method4 only
-            System.out.println("method4 works!");
+    private final Object object = new Object();
+    public void method3() {
+        synchronized (object) {  // this won't be part of lock which method1 or method2 or method4 shares as we created lock using new object
+            try {
+                System.out.println("method3 works! on"+ Thread.currentThread().getName()+ " " +LocalDateTime.now());
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
-    public void method5() {
-        synchronized (SynchonizedExample.class) {  // Locks the whole class,  meaning only one thread across all instances of MyClass can
-            // execute the synchronized block at a time.
-            System.out.println("method5 works");
+    public void method4() {
+        synchronized (SynchonizedExample.class) {  // Lock is on CLASS, not object. ONE lock for ALL instances even it's obj1 or obj2
+            try {
+                System.out.println("method4 works! on"+ Thread.currentThread().getName()+ " " +LocalDateTime.now());
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
