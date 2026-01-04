@@ -12,6 +12,11 @@ public class ThisKeyword {
         this.name = name;
         this.age = age;
     }
+    class Inner {
+        void display() {
+            ThisKeyword.this.show(); // Referring to outer class method from Inner
+        }
+    }
 
     public static void main(String[] args) {
         ThisKeyword outer = new ThisKeyword();
@@ -27,9 +32,4 @@ public class ThisKeyword {
         System.out.println("Outer class method");
     }
 
-    class Inner {
-        void display() {
-            ThisKeyword.this.show(); // Referring to outer class method from Inner
-        }
-    }
 }

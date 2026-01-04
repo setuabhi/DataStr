@@ -5,19 +5,6 @@ public class StaticExample {
         System.out.println("Hi from static block");
     }
 
-    public static void main(String[] args) {
-        StaticExample s = new StaticExample();
-        StaticExample.Abhinav.print2();
-
-        Abhinav s2 = new StaticExample.Abhinav();
-        s2.print();
-        StaticExample.Abhinav.print2();
-
-        Soumya soumyaObj = s.new Soumya();
-        soumyaObj.printSoumya();
-        ;
-    }
-
     public static class Abhinav {
         static {
             System.out.println("Hi from Inner static block");
@@ -36,5 +23,18 @@ public class StaticExample {
         void printSoumya() {
             System.out.println("Hi from Soumya");
         }
+    }
+
+    public static void main(String[] args) {
+        StaticExample s = new StaticExample();
+        StaticExample.Abhinav.print2();
+
+        Abhinav s2 = new StaticExample.Abhinav();
+        s2.print();
+        StaticExample.Abhinav.print2();
+
+        Soumya soumyaObj = s.new Soumya();
+        soumyaObj.printSoumya();
+        ;
     }
 }
