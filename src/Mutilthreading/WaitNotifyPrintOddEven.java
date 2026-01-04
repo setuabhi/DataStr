@@ -31,20 +31,18 @@ public class WaitNotifyPrintOddEven {
             }
         });
         t1.setName("Even Thread");
-        t1.start();
         t2.setName("Odd Thread");
         t2.start();
+        t1.start();
 
     }
 
     void printOdd() throws InterruptedException {
         while (x <= max) {
             synchronized (this) {
-                if (x % 2 == 0) {
+                if (x % 2 != 0) {
+                    System.out.println("Thread: " + Thread.currentThread().getName() + " " + x++);
                     wait();
-                } else {
-                    System.out.println("Thead: " + Thread.currentThread().getName() + " " + x++);
-                    notify();
                 }
             }
         }
@@ -53,10 +51,8 @@ public class WaitNotifyPrintOddEven {
     void printEven() throws InterruptedException {
         while (x <= max) {
             synchronized (this) {
-                if (x % 2 != 0) {
-                    wait();
-                } else {
-                    System.out.println("Thead: " + Thread.currentThread().getName() + " " + x++);
+                if (x % 2 == 0) {
+                    System.out.println("Thread: " + Thread.currentThread().getName() + " " + x++);
                     notify();
                 }
 
