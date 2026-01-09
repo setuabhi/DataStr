@@ -96,6 +96,11 @@
     🔴 Stack Memory – Stores local variables and method calls, Each method gets a new stack frame when it is called , Cleaned When method ends
        Heap Memory –  Stores objects and instance variables, cleaned By Garbage Collector
        String Constant Pool (SCP) – A special part of the heap where string literals are stored. cleaned By Garbage Collector
+
+        so: All objects created with new → Heap
+        All string literals → SCP
+        Variables inside methods → Stack
+        Fields inside objects → stored inside heap object
      
     🔴  class Person {
         String name; // Stored in heap
@@ -117,10 +122,11 @@
     -----------------
     Heap:
     | Person Object  |
-    | name = "Alice" |
+    | name           |
     ----------------
     SCP:
-    | "Java" (one object) |
+    | "Java" |
+    | "Alice" |
 
 11.**String questions:**
 
@@ -160,11 +166,13 @@
             Stack:
             | s1 ->Pointing to Heap |
 
-    🔴  String s1 = new String("abhi");  // Heap object
+    🔴  String s0 = new String("abhi");  // Heap object
+        String s1 = new String("abhi");  // Heap object
         String s2 = "abhi";              // SCP object
         String s3 = "abhi";             // SCP object
         String s4 = new String("abhi").intern();         // s4 points to SCP object
-    
+
+        System.out.println(s0 == s1); // true (heap vs heap)
         System.out.println(s1 == s2); // false (heap vs SCP)
         System.out.println(s2 == s3); // true (both in SCP)
         System.out.println(s2 == s4); // true (both in SCP)

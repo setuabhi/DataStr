@@ -5,6 +5,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Practice {
+    int x;
+    Practice(int x)
+    {
+        this.x=x;
+    }
     public static void main(String[] args) {
         List<Employee> employees = List.of(
                 new Employee("John", "USA"),
