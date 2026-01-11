@@ -11,5 +11,6 @@ public class Bot implements Subscriber {
     @Override
     public void notify(String videoTitle) {
         System.out.println("Bot: "+name + " got notified about the video: " + videoTitle);
+        System.out.println("Analyzing video");
     }
 }

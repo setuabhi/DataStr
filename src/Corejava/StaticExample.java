@@ -26,15 +26,12 @@ public class StaticExample {
     }
 
     public static void main(String[] args) {
-        StaticExample s = new StaticExample();
-        StaticExample.Abhinav.print2();
+        StaticExample.Abhinav.print2(); //Static without object creation
 
         Abhinav s2 = new StaticExample.Abhinav();
         s2.print();
-        StaticExample.Abhinav.print2();
 
-        Soumya soumyaObj = s.new Soumya();
+        Soumya soumyaObj = new StaticExample().new Soumya();
         soumyaObj.printSoumya();
-        ;
     }
 }

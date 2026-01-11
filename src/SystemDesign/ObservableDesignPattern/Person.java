@@ -11,5 +11,6 @@ public class Person implements Subscriber {
     @Override
     public void notify(String videoTitle) {
         System.out.println("Human: "+name + " got notified about the video: " + videoTitle);
+        System.out.println("Watching Video");
     }
 }

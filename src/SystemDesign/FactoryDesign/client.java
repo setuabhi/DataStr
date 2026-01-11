@@ -7,7 +7,7 @@ public class client {
         emailNotification.sendNotification();
 
         //With Factory, client doesn't know which Class object being Created
-        Notification emailNotificationwithFactory = FactoryClass.getNotification("EMAIL");
+        Notification emailNotificationwithFactory = GetNotificationFactory.getNotification("EMAIL");
         emailNotificationwithFactory.sendNotification();
     }
 }

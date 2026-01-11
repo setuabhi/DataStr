@@ -1,6 +1,6 @@
 package SystemDesign.FactoryDesign;
 
-public class FactoryClass {
+public class GetNotificationFactory {
     public static Notification getNotification(String type) {
 
         if ("EMAIL".equalsIgnoreCase(type)) {

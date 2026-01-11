@@ -15,15 +15,10 @@ public class ObserverPatternExample {
 
         // Subscribers subscribe to the channel
         channel.subscribe(alice);
-        channel.subscribe(bob);
         channel.subscribe(appleBot);
-        channel.subscribe(metaBot);
 
         // Channel uploads a new video
         channel.uploadVideo("Learn Observer Pattern in Java");
 
-        // Unsubscribe Bob and upload another video
-        channel.unsubscribe(bob);
-        channel.uploadVideo("Advanced Java Tutorials");
     }
 }
