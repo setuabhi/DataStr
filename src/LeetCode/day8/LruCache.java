@@ -49,6 +49,7 @@ public class LruCache {
         cache.add(3, "three");
         cache.get(3);
         cache.get(1);
-        cache.add(1, "Four");
+        cache.add(4, "Four");
+        System.out.println(cache.get(2)); // removed due to least used
     }
 }
