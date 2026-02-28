@@ -2,11 +2,6 @@ package LeetCode.Day1;
 
 import java.util.HashMap;
 
-/**
- * Use hashmap, key = sum till index i, value = i
- * if (currentSum - Target) present in hashmap then we found the result.
- * Store first occurence of sum in Hashmap
- */
 public class SubArrayWithGivenSum {
     public static void main(String[] args) {
         int[] arr = {4, 1, -3, 2, 10, 6};

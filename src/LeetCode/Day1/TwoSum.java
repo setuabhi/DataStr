@@ -2,11 +2,6 @@ package LeetCode.Day1;
 
 import java.util.HashMap;
 
-/**
- * Use hashmap
- * check target - current data present or not in map
- * else put in Hashmap
- */
 public class TwoSum {
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};

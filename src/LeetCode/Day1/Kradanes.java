@@ -1,12 +1,5 @@
 package LeetCode.Day1;
 
-/**
- * Initialize MaxSum to math min
- * Initialize currentSum , tempStartIndex to 0
- * Initialize startOutputIndex and endOutputIndex initialize to -1
- * Iterate from first element, calculate currentSum, if it's more than MaxSum, update startIndex, EndIndex, MaxSum
- * if currentSum is negative, no need to carry forward, set it to zero and update tempStartIndex to next element
- */
 public class Kradanes {
     public static void main(String[] args) {
         int[] arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
