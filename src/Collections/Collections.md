@@ -1,12 +1,29 @@
+Questions:
+1. Hashset.add() and Hashset.remove() method return type
+2. HashMap.put(), HashMap.remove(), HashMap.keySet(), HashMap.values(), map.entrySet(), map.entrySet().iterator() method return type
+3. HashMap add and put method time complexity
+4. Multimap, return type of it's get method?
+5. Fail safe iterator, what will listIterator and mapIterator next() will return
+6. How to iterate Hashmap using entrySet, forEach and iterator ?
+7. Queue methods and which has exception
+8. Stack methods and which has exception
+9. How to create minHeap
+10.  head = 3->2->1
+     temp = 10->0
+     head.next=temp, what will the structure of head and temp
+11. Tree set first last pollFirst pollLast methods. Tree Map firstEntry, lastEntry, pollFirstEntry, pollLastEntry,
+12. 
+
+
 1. Hashset.add returns true if new element being added else return false.
    1.0 remove returns true if element present else false
 
-2. Hashmap.put returns null if new element being added else return value for that key
-   2.0 remove returns value for that key else returns null
+2. Hashmap.put returns value for that key if that key presents else returns null
+   2.0 remove also same as put
    2.1 map.values() : List of Values 
    2.2 map.keySet() : Set of Keys
-   2.3 map.entrySet() gives you set of type Map.Entry<Integer, Integer>
-   2.4 map.entrySet().iterator() gives you iterator of type Map.Entry<Integer, Integer>
+   2.3 map.entrySet() gives you Set of type Map.Entry<Integer, Integer>
+   2.4 map.entrySet().iterator() gives you Iterator of type Map.Entry<Integer, Integer>
 
 3. Both Hashmap and hashset works on O(1) for their add/put and get Methods
 
@@ -21,6 +38,7 @@
 5. Concurrent collections, such as ConcurrentHashMap, CopyOnWriteArrayList, and ConcurrentLinkedQueue,
 are designed for high concurrency and allow safe operations across multiple threads without the need for
 external synchronization. They are FailSafe in iterator
+   listIterator next() will return element, mapIterator next() will return Map.Entry<Key,Value> entry;
 
 6. hashMap iterate:
 
@@ -39,72 +57,35 @@ external synchronization. They are FailSafe in iterator
       System.out.println(entry.getKey() + " " + entry.getValue());
       }
 
-7. Collection hierarchy :
 
-    java.lang.Iterable (interface)
-    ↑
-    java.util.Collection (interface)
-    ├── java.util.List (interface)
-    │     ├── ArrayList
-    │     ├── LinkedList
-    │     ├── Vector
-    │     └── Stack
-    │
-    ├── java.util.Set (interface)
-    │     ├── HashSet
-    │     ├── LinkedHashSet
-    │     └── TreeSet (implements NavigableSet)
-    │
-    └── java.util.Queue (interface)
-    ├── java.util.Deque (interface)
-    │     ├── ArrayDeque
-    │     └── LinkedList (implements both Dequeue and List)
-    │
-    ├── PriorityQueue
-    └── LinkedList
-
-
-    java.util.Map (interface) (not part of collection)
-    ├── HashMap
-    ├── LinkedHashMap
-    ├── TreeMap (implements NavigableMap)
-    └── Hashtable
-
-8. Queue ( exception comes in add() and remove() ):
+7. Queue FIFO ( exception comes in add() ):
 
     Use offer instead of add to avoid exception on getting full, returns false if full, add() throws IllegalStateException if the queue is full.  --Add
-    Use poll() instead of remove() to avoid exception if empty, returns null if empty, no exception --Remove and return head
-    Use remove(x) if you want to remove specific element x, only remove() Remove and return head nad throws NoSuchElementException if the queue is empty.
+    Use poll() to remove first element, returns null if empty, no exception --Remove and return head
+    Use remove(x) if you want to remove specific element x
     Use peek() to access fist element without removing, if no element then no exception will be thrown, null will be returned -- get first element
 
-9. Stack ( exception comes in pop()  peek() and remove(x) ):
+8. Stack LIFO( exception comes in pop()  peek() and remove(x) ):
 
     Use push() --Add
-    use pop() --removes and returns the top element; throws EmptyStackException if empty, use if(!stack.empty() check
-    Use peek() -- get first element without removing, throws EmptyStackException if empty, use if(!stack.empty() check
-    Use remove(x) if you want to remove any specific element, here we don't have remove() to remove head
-    use search(x) -- get index of searched element in pop() order, starts from 1,2,3,4 return -1 if not present
+    use pop() --removes and returns the top element; throws EmptyStackException if empty, use if(!stack.empty()) check
+    Use peek() -- get first element without removing, throws EmptyStackException if empty, use if(!stack.empty()) check
+    Use remove(x) if you want to remove any specific element
 
-10. Dequeue, don't use it in interview, use either stack or queue
 
-    It has all functions of stack and queue like push pop peek offer poll except search
-    Useful one: offer / pool / peek / peekFirst / peekLast / pollFirst / pollLast / size
-                first and last means inserted first or inserted last
-
-11. Heap:
+9. MinHeap: PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
     By default store in increasing order, method: offer/ poll/ peek
 
-12. Time complexity of Queue Stack and DEQUEUE are O(1)
 
-13. LinkedList:
+10. LinkedList:
 
     head = 3->2->1
     temp = 10->0
-    head.next=temp  : head= 3->10->0
+    head.next=temp  : head= 3->10->0 and temp = 10->0
     temp=temp.next : head= 3->10->0 and temp = 0 (will not change head structure since they are only variables)
 
-14. TreeMap & TreeSet (Uses Red Black Tree): Use where you need sorted unique element, else go for heap
+11. TreeMap & TreeSet (Uses Red Black Tree): Use where you need sorted unique element, else go for heap
 
     TreeSet: [10, 20, 30, 40]
         first(): first element
@@ -112,13 +93,4 @@ external synchronization. They are FailSafe in iterator
         pollFirst(): remove and return first element
         pollLast(): remove and return last element
 
-    TreeMap : firstKey() , firstEntry(), pollFirstEntry(), pollLastEntry()
-
-15. Integer[] arrNonPrimitive = {-1, -3, 3, -2, 4, 5, -1, 0};
-    Arrays.sort(arrNonPrimitive, Collections.reverseOrder()); to sort in descending order,
-    if it's primitive then Collections.reverseOrder() won't work as it works on Object only:
-    int[] sortedDesc = Arrays.stream(arr)
-    .boxed()                                 // convert IntStream → Stream<Integer>
-    .sorted(Collections.reverseOrder())      // sort descending, work bcoz we converted it to  Stream<Integer>
-    .mapToInt(Integer::intValue)             // back to int
-    .toArray();
+    TreeMap : firstEntry() , lastEntry(), pollFirstEntry(), pollLastEntry()
