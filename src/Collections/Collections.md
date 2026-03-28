@@ -5,7 +5,8 @@
    2.0 remove returns value for that key else returns null
    2.1 map.values() : List of Values 
    2.2 map.keySet() : Set of Keys
-   2.3 map.entrySet() gives you all the key-value pairs as a set of type Set<Map.Entry<Integer, Integer>>
+   2.3 map.entrySet() gives you set of type Map.Entry<Integer, Integer>
+   2.4 map.entrySet().iterator() gives you iterator of type Map.Entry<Integer, Integer>
 
 3. Both Hashmap and hashset works on O(1) for their add/put and get Methods
 
@@ -25,17 +26,17 @@ external synchronization. They are FailSafe in iterator
 
     1. entrySet:
         for (Map.Entry<Integer, Integer> entry : hm.entrySet()) {
-
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
     2.  JAVA8:    
         tm.forEach((key, value) -> {
             System.out.println(key+ value);
         });
-   3. Iterator: 
+    3. Iterator: 
       Iterator<Map.Entry<Integer, String>> iterator = map.entrySet().iterator();
       while (iterator.hasNext()) {
-       System.out.println(iterator.next().getKey() + " " + iterator.next().getValue());
+      Map.Entry<Integer, String> entry = iterator.next();
+      System.out.println(entry.getKey() + " " + entry.getValue());
       }
 
 7. Collection hierarchy :
