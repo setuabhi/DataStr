@@ -124,12 +124,14 @@
 
 9.**Normal (Platform) Thread:**
 
+      Each thread gets a fixed-size stack upfront (~1 MB per thread) means 1,000 threads → ~1 GB memory Leads to OutOfMemoryError
       Normal Java thread = 1 real OS thread
       If the thread is blocked (DB call, API call, sleep, waiting):
       👉 The OS thread is also blocked
 
 10.**Virtual Thread:**
 
+      Stack is not allocated fully upfront, Uses dynamic, growable stack (on heap)
       Virtual thread ≠ OS thread, 
       Virtual thread is managed by JVM, JVM runs virtual threads on few OS threads
       If the virtual is blocked (DB call, API call, sleep, waiting):
