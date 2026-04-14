@@ -1,4 +1,4 @@
-package SystemDesign.SingletonDesign;
+package SystemDesign.DesignPatterns.SingletonDesign;
 
 import java.util.HashMap;
 import java.util.Map;

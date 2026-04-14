@@ -1,4 +1,4 @@
-package SystemDesign.Builder;
+package SystemDesign.DesignPatterns.Builder;
 
 public class NotificationWithBuilder {
     private String message;

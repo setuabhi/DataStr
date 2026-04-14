@@ -1,4 +1,4 @@
-package SystemDesign.ObservableDesignPattern;
+package SystemDesign.DesignPatterns.ObservableDesignPattern;
 
 public class Person implements Subscriber {
     private String name;

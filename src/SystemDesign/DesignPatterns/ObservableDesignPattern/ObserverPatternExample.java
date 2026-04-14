@@ -1,4 +1,4 @@
-package SystemDesign.ObservableDesignPattern;
+package SystemDesign.DesignPatterns.ObservableDesignPattern;
 
 public class ObserverPatternExample {
     public static void main(String[] args) {

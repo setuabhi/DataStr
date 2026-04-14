@@ -1,4 +1,4 @@
-package SystemDesign.ObservableDesignPattern;
+package SystemDesign.DesignPatterns.ObservableDesignPattern;
 
 import java.util.ArrayList;
 import java.util.List;

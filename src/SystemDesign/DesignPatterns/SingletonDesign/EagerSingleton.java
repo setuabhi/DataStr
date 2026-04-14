@@ -1,4 +1,4 @@
-package SystemDesign.SingletonDesign;
+package SystemDesign.DesignPatterns.SingletonDesign;
 
 /**
  * Class instance will be created when application start running

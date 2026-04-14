@@ -1,4 +1,4 @@
-package SystemDesign.Builder;
+package SystemDesign.DesignPatterns.Builder;
 
 public class client {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package SystemDesign.Strategy;
+package SystemDesign.DesignPatterns.Strategy;
 
 public class client {
     public static void main(String[] args) {
