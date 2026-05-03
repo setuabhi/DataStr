@@ -2,17 +2,19 @@ Questions:
 1. Hashset.add() and Hashset.remove() method return type
 2. HashMap.put(), HashMap.remove(), HashMap.keySet(), HashMap.values(), map.entrySet(), map.entrySet().iterator() method return type
 3. HashMap add and put method time complexity
-4. Multimap, return type of it's get method?
-5. Fail safe iterator, what will listIterator and mapIterator next() will return
+4. Multimap, return type of its get method?
+5. Fail-safe iterator, what will listIterator and mapIterator next() will return
 6. How to iterate Hashmap using entrySet, forEach and iterator ?
 7. Queue methods and which has exception
 8. Stack methods and which has exception
 9. How to create minHeap
 10.  head = 3->2->1
      temp = 10->0
-     head.next=temp, what will the structure of head and temp
+     head.next = temp, what will the structure of head and temp
 11. Tree set first last pollFirst pollLast methods. Tree Map firstEntry, lastEntry, pollFirstEntry, pollLastEntry,
-12. 
+12. Set<List<Integer>> setOfInt and Set<int[]> setOfInt, which won't have duplicate if we maintain insertion order
+13. How to sort using first element of 2D array, where arr is 2D array
+14. Sort map based on key and value
 
 
 1. Hashset.add returns true if new element being added else return false.
@@ -36,8 +38,8 @@ Questions:
     System.out.println(multimap.get("key1"));  // Outputs: [value1, value2]
 
 5. Concurrent collections, such as ConcurrentHashMap, CopyOnWriteArrayList, and ConcurrentLinkedQueue,
-are designed for high concurrency and allow safe operations across multiple threads without the need for
-external synchronization. They are FailSafe in iterator
+   are designed for high concurrency and allow safe operations across multiple threads without the need for
+   external synchronization. They are FailSafe in iterator
    listIterator next() will return element, mapIterator next() will return Map.Entry<Key,Value> entry;
 
 6. hashMap iterate:
@@ -94,3 +96,22 @@ external synchronization. They are FailSafe in iterator
         pollLast(): remove and return last element
 
     TreeMap : firstEntry() , lastEntry(), pollFirstEntry(), pollLastEntry()
+
+12. Set<int[]> will have duplicate because it doesn't use equals and hashcode
+
+13. Arrays.sort(arr, Comparator.comparingInt(a->a[0]));
+
+14. Based on key:
+      Map<Integer, String> sorted = new TreeMap<>(map); //Ascending
+
+      TreeMap<Integer, String> sorted = new TreeMap<>(Collections.reverseOrder());
+      sorted = new TreeMap<>(map); //Descending 
+
+    Based on Value:
+    List<Map.Entry<Integer, String> arrL= map.entrySet();
+    arrL.sort(a->a.getValue(), Collections.reverseOrder()); // remove Collections.reverseOrder() for ascending
+    Map<Integer, String> sorted = new HasMap<>(map);
+    for(Map.Entry<Integer, String> entry : arrL)
+    {
+    sorted.put(entry.getKey(),entry.getValue());
+    }
